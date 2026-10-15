@@ -6,6 +6,7 @@ import 'package:streetbite/core/theme/app_theme.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
 import 'package:streetbite/injection.dart';
 import 'package:streetbite/l10n/app_localizations.dart';
+import 'package:streetbite/presentation/blocs/auth/auth_cubit.dart';
 import 'package:streetbite/presentation/blocs/locale/locale_cubit.dart';
 import 'package:streetbite/presentation/blocs/theme/theme_bloc.dart';
 
@@ -18,6 +19,7 @@ class StreetBiteApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => sl<ThemeBloc>()),
         BlocProvider(create: (_) => sl<LocaleCubit>()),
+        BlocProvider(create: (_) => sl<AuthCubit>()),
       ],
       child: BlocBuilder<ThemeBloc, ThemeMode>(
         builder: (context, themeMode) {

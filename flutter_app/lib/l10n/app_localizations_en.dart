@@ -41,4 +41,77 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get errorUnknown => 'An unexpected error occurred. Please try again.';
+
+  @override
+  String get loginTitle => 'Welcome back';
+
+  @override
+  String get loginSubtitle => 'Log in to order your favourite street food';
+
+  @override
+  String get signupTitle => 'Create your account';
+
+  @override
+  String get signupSubtitle =>
+      'Join StreetBite and discover street food near you';
+
+  @override
+  String get fullNameHint => 'Full name';
+
+  @override
+  String get emailHint => 'Email';
+
+  @override
+  String get passwordHint => 'Password';
+
+  @override
+  String get confirmPasswordHint => 'Confirm password';
+
+  @override
+  String get loginButton => 'Log in';
+
+  @override
+  String get signupButton => 'Sign up';
+
+  @override
+  String get noAccountPrompt => 'Don\'t have an account?';
+
+  @override
+  String get haveAccountPrompt => 'Already have an account?';
+
+  @override
+  String get validationNameRequired => 'Please enter your full name';
+
+  @override
+  String get validationNameCapital => 'Name must start with a capital letter';
+
+  @override
+  String get validationEmailRequired => 'Please enter your email';
+
+  @override
+  String get validationEmailInvalid => 'Enter a valid email address';
+
+  @override
+  String get validationPasswordRequired => 'Please enter your password';
+
+  @override
+  String get validationPasswordShort =>
+      'Password must be at least 6 characters';
+
+  @override
+  String get validationConfirmRequired => 'Please confirm your password';
+
+  @override
+  String get validationPasswordMismatch => 'Passwords do not match';
+
+  @override
+  String homeWelcome(String name) {
+    return 'Welcome, $name!';
+  }
+
+  @override
+  String get logoutButton => 'Log out';
+
+  @override
+  String get changeLanguage => 'Change language';
 }

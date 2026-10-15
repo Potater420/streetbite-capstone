@@ -12,7 +12,7 @@ class AppTheme {
     final scheme = ColorScheme.fromSeed(
       seedColor: AppColors.primary,
       brightness: brightness,
-    );
+    ).copyWith(primary: AppColors.primary, onPrimary: Colors.white);
     final base = ThemeData(useMaterial3: true, colorScheme: scheme);
 
     return base.copyWith(

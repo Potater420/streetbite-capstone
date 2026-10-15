@@ -9,5 +9,33 @@
   "errorWeakPassword": "That password is too weak.",
   "errorInvalidEmail": "Please enter a valid email address.",
   "errorTooManyRequests": "Too many attempts. Please try again later.",
-  "errorUnknown": "An unexpected error occurred. Please try again."
+  "errorUnknown": "An unexpected error occurred. Please try again.",
+  "loginTitle": "Welcome back",
+  "loginSubtitle": "Log in to order your favourite street food",
+  "signupTitle": "Create your account",
+  "signupSubtitle": "Join StreetBite and discover street food near you",
+  "fullNameHint": "Full name",
+  "emailHint": "Email",
+  "passwordHint": "Password",
+  "confirmPasswordHint": "Confirm password",
+  "loginButton": "Log in",
+  "signupButton": "Sign up",
+  "noAccountPrompt": "Don't have an account?",
+  "haveAccountPrompt": "Already have an account?",
+  "validationNameRequired": "Please enter your full name",
+  "validationNameCapital": "Name must start with a capital letter",
+  "validationEmailRequired": "Please enter your email",
+  "validationEmailInvalid": "Enter a valid email address",
+  "validationPasswordRequired": "Please enter your password",
+  "validationPasswordShort": "Password must be at least 6 characters",
+  "validationConfirmRequired": "Please confirm your password",
+  "validationPasswordMismatch": "Passwords do not match",
+  "homeWelcome": "Welcome, {name}!",
+  "@homeWelcome": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "logoutButton": "Log out",
+  "changeLanguage": "Change language"
 }
