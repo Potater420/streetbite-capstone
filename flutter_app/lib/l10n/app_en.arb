@@ -37,5 +37,26 @@
     }
   },
   "logoutButton": "Log out",
-  "changeLanguage": "Change language"
+  "changeLanguage": "Change language",
+   "homeGreeting": "Hi, {name}",
+  "@homeGreeting": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "searchHint": "Search meals",
+  "categoryAll": "All",
+  "hotOffersTitle": "Hot Offers",
+  "allMealsTitle": "All meals",
+  "noMealsFound": "No meals found",
+  "retryButton": "Try again",
+  "addToCart": "Add to cart",
+  "addedToCart": "{name} added to cart",
+  "@addedToCart": {
+    "placeholders": {
+      "name": { "type": "String" }
+    }
+  },
+  "cartTooltip": "Cart",
+  "toggleTheme": "Toggle theme"
 }

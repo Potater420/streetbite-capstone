@@ -295,6 +295,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Change language'**
   String get changeLanguage;
+
+  /// No description provided for @homeGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'Hi, {name}'**
+  String homeGreeting(String name);
+
+  /// No description provided for @searchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search meals'**
+  String get searchHint;
+
+  /// No description provided for @categoryAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get categoryAll;
+
+  /// No description provided for @hotOffersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Hot Offers'**
+  String get hotOffersTitle;
+
+  /// No description provided for @allMealsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'All meals'**
+  String get allMealsTitle;
+
+  /// No description provided for @noMealsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No meals found'**
+  String get noMealsFound;
+
+  /// No description provided for @retryButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get retryButton;
+
+  /// No description provided for @addToCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to cart'**
+  String get addToCart;
+
+  /// No description provided for @addedToCart.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} added to cart'**
+  String addedToCart(String name);
+
+  /// No description provided for @cartTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart'**
+  String get cartTooltip;
+
+  /// No description provided for @toggleTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Toggle theme'**
+  String get toggleTheme;
 }
 
 class _AppLocalizationsDelegate
