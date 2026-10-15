@@ -12,7 +12,7 @@ enum FailureType {
   unknown,
 }
 
-class Failure extends Equatable {
+class Failure extends Equatable implements Exception {
   const Failure(this.type);
 
   final FailureType type;
