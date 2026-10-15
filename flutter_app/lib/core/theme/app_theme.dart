@@ -16,7 +16,9 @@ class AppTheme {
     final base = ThemeData(useMaterial3: true, colorScheme: scheme);
 
     return base.copyWith(
-      textTheme: GoogleFonts.poppinsTextTheme(base.textTheme),
+      textTheme: base.textTheme.apply(
+        fontFamily: GoogleFonts.poppins().fontFamily,
+      ),
       appBarTheme: AppBarTheme(
         centerTitle: true,
         backgroundColor: scheme.surface,
