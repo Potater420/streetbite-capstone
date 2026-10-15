@@ -1,4 +1,13 @@
 {
   "@@locale": "en",
-  "appName": "StreetBite"
+  "appName": "StreetBite",
+  "errorNetwork": "Can't reach the internet. Check your connection and try again.",
+  "errorTimeout": "The request took too long. Please try again.",
+  "errorServer": "Something went wrong on our side. Please try later.",
+  "errorInvalidCredentials": "Incorrect email or password.",
+  "errorEmailInUse": "This email is already registered.",
+  "errorWeakPassword": "That password is too weak.",
+  "errorInvalidEmail": "Please enter a valid email address.",
+  "errorTooManyRequests": "Too many attempts. Please try again later.",
+  "errorUnknown": "An unexpected error occurred. Please try again."
 }
