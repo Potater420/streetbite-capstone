@@ -7,6 +7,7 @@ import 'package:streetbite/core/utils/context_extensions.dart';
 import 'package:streetbite/injection.dart';
 import 'package:streetbite/l10n/app_localizations.dart';
 import 'package:streetbite/presentation/blocs/auth/auth_cubit.dart';
+import 'package:streetbite/presentation/blocs/cart/cart_bloc.dart';
 import 'package:streetbite/presentation/blocs/locale/locale_cubit.dart';
 import 'package:streetbite/presentation/blocs/theme/theme_bloc.dart';
 
@@ -20,6 +21,7 @@ class StreetBiteApp extends StatelessWidget {
         BlocProvider(create: (_) => sl<ThemeBloc>()),
         BlocProvider(create: (_) => sl<LocaleCubit>()),
         BlocProvider(create: (_) => sl<AuthCubit>()),
+        BlocProvider(create: (_) => sl<CartBloc>()),
       ],
       child: BlocBuilder<ThemeBloc, ThemeMode>(
         builder: (context, themeMode) {
