@@ -151,4 +151,23 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get toggleTheme => 'Toggle theme';
+
+  @override
+  String get instructionsTitle => 'Instructions';
+
+  @override
+  String addToCartWithPrice(String price) {
+    return 'Add to cart • $price';
+  }
+
+  @override
+  String addAnotherWithCount(int count) {
+    return 'Add another • $count in cart';
+  }
+
+  @override
+  String get addToFavorites => 'Add to favourites';
+
+  @override
+  String get removeFromFavorites => 'Remove from favourites';
 }

@@ -361,6 +361,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Toggle theme'**
   String get toggleTheme;
+
+  /// No description provided for @instructionsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Instructions'**
+  String get instructionsTitle;
+
+  /// No description provided for @addToCartWithPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to cart • {price}'**
+  String addToCartWithPrice(String price);
+
+  /// No description provided for @addAnotherWithCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Add another • {count} in cart'**
+  String addAnotherWithCount(int count);
+
+  /// No description provided for @addToFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Add to favourites'**
+  String get addToFavorites;
+
+  /// No description provided for @removeFromFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from favourites'**
+  String get removeFromFavorites;
 }
 
 class _AppLocalizationsDelegate

@@ -43,5 +43,10 @@
   "addToCart": "أضف إلى السلة",
   "addedToCart": "تمت إضافة {name} إلى السلة",
   "cartTooltip": "السلة",
-  "toggleTheme": "تبديل المظهر"
+  "toggleTheme": "تبديل المظهر",
+    "instructionsTitle": "طريقة التحضير",
+  "addToCartWithPrice": "أضف إلى السلة • {price}",
+  "addAnotherWithCount": "أضف المزيد • {count} في السلة",
+  "addToFavorites": "أضف إلى المفضلة",
+  "removeFromFavorites": "إزالة من المفضلة"
 }

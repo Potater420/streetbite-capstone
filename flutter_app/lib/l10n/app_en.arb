@@ -58,5 +58,20 @@
     }
   },
   "cartTooltip": "Cart",
-  "toggleTheme": "Toggle theme"
+  "toggleTheme": "Toggle theme",
+    "instructionsTitle": "Instructions",
+  "addToCartWithPrice": "Add to cart • {price}",
+  "@addToCartWithPrice": {
+    "placeholders": {
+      "price": { "type": "String" }
+    }
+  },
+  "addAnotherWithCount": "Add another • {count} in cart",
+  "@addAnotherWithCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "addToFavorites": "Add to favourites",
+  "removeFromFavorites": "Remove from favourites"
 }
