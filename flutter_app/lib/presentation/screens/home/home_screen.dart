@@ -75,8 +75,10 @@ class HomeScreen extends StatelessWidget {
                       context.read<ThemeBloc>().add(const ThemeToggled()),
                 ),
               ),
-              // TODO(phase-5): open the cart screen.
-              CartIconButton(onPressed: () {}),
+              CartIconButton(
+                onPressed: () =>
+                    Navigator.of(context).pushNamed(AppRoutes.cart),
+              ),
               // TEMPORARY: logout moves to the Profile screen in Phase 6.
               IconButton(
                 tooltip: l10n.logoutButton,

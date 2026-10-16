@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streetbite/core/constants/app_colors.dart';
 import 'package:streetbite/core/errors/failure_message.dart';
+import 'package:streetbite/core/router/app_routes.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
 import 'package:streetbite/domain/entities/meal.dart';
 import 'package:streetbite/presentation/blocs/cart/cart_bloc.dart';
@@ -136,8 +137,11 @@ class MealDetailsScreen extends StatelessWidget {
                       },
                     ),
                     const SizedBox(width: 4),
-                    // TODO(phase-5): open the cart screen.
-                    CartIconButton(style: _overlayStyle, onPressed: () {}),
+                                        CartIconButton(
+                      style: _overlayStyle,
+                      onPressed: () =>
+                          Navigator.of(context).pushNamed(AppRoutes.cart),
+                    ),
                   ],
                 ),
               ),
