@@ -40,7 +40,7 @@ class AuthScaffold extends StatelessWidget {
                   Image.asset(
                     'assets/images/welcome_hero.png',
                     fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) =>
+                    errorBuilder: (_, _, _) =>
                         const ColoredBox(color: Colors.black12),
                   ),
                   const DecoratedBox(

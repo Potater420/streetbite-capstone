@@ -112,4 +112,41 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get changeLanguage => 'تغيير اللغة';
+
+  @override
+  String homeGreeting(String name) {
+    return 'أهلًا، $name';
+  }
+
+  @override
+  String get searchHint => 'ابحث عن وجبة';
+
+  @override
+  String get categoryAll => 'الكل';
+
+  @override
+  String get hotOffersTitle => 'عروض ساخنة';
+
+  @override
+  String get allMealsTitle => 'كل الوجبات';
+
+  @override
+  String get noMealsFound => 'لا توجد وجبات';
+
+  @override
+  String get retryButton => 'حاول مرة أخرى';
+
+  @override
+  String get addToCart => 'أضف إلى السلة';
+
+  @override
+  String addedToCart(String name) {
+    return 'تمت إضافة $name إلى السلة';
+  }
+
+  @override
+  String get cartTooltip => 'السلة';
+
+  @override
+  String get toggleTheme => 'تبديل المظهر';
 }

@@ -114,4 +114,41 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get changeLanguage => 'Change language';
+
+  @override
+  String homeGreeting(String name) {
+    return 'Hi, $name';
+  }
+
+  @override
+  String get searchHint => 'Search meals';
+
+  @override
+  String get categoryAll => 'All';
+
+  @override
+  String get hotOffersTitle => 'Hot Offers';
+
+  @override
+  String get allMealsTitle => 'All meals';
+
+  @override
+  String get noMealsFound => 'No meals found';
+
+  @override
+  String get retryButton => 'Try again';
+
+  @override
+  String get addToCart => 'Add to cart';
+
+  @override
+  String addedToCart(String name) {
+    return '$name added to cart';
+  }
+
+  @override
+  String get cartTooltip => 'Cart';
+
+  @override
+  String get toggleTheme => 'Toggle theme';
 }
