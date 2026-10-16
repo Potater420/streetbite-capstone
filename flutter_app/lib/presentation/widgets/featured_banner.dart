@@ -5,9 +5,14 @@ import 'package:streetbite/presentation/widgets/meal_image.dart';
 
 /// PageView banner of featured meals, with page indicator dots.
 class FeaturedBanner extends StatefulWidget {
-  const FeaturedBanner({super.key, required this.meals});
+  const FeaturedBanner({
+    super.key,
+    required this.meals,
+    required this.onMealTap,
+  });
 
   final List<Meal> meals;
+  final ValueChanged<Meal> onMealTap;
 
   @override
   State<FeaturedBanner> createState() => _FeaturedBannerState();
@@ -37,7 +42,10 @@ class _FeaturedBannerState extends State<FeaturedBanner> {
             onPageChanged: (index) => setState(() => _page = index),
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.symmetric(horizontal: 6),
-              child: _BannerItem(meal: widget.meals[index]),
+              child: GestureDetector(
+                onTap: () => widget.onMealTap(widget.meals[index]),
+                child: _BannerItem(meal: widget.meals[index]),
+              ),
             ),
           ),
         ),
