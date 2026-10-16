@@ -120,6 +120,10 @@ class _MealsContent extends StatelessWidget {
       );
   }
 
+  void _openDetails(BuildContext context, Meal meal) {
+    Navigator.of(context).pushNamed(AppRoutes.mealDetails, arguments: meal);
+  }
+
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<MealsCubit>();
@@ -152,8 +156,14 @@ class _MealsContent extends StatelessWidget {
                   selected: state.category,
                   onSelected: cubit.selectCategory,
                 ),
-                FeaturedBanner(meals: state.featured),
-                HotOffersSection(meals: state.hotOffers),
+                FeaturedBanner(
+                  meals: state.featured,
+                  onMealTap: (meal) => _openDetails(context, meal),
+                ),
+                HotOffersSection(
+                  meals: state.hotOffers,
+                  onMealTap: (meal) => _openDetails(context, meal),
+                ),
                 SectionTitle(context.l10n.allMealsTitle),
               ],
             ),
@@ -181,9 +191,13 @@ class _MealsContent extends StatelessWidget {
                   crossAxisSpacing: spacing,
                   childAspectRatio: cardWidth / (cardWidth + 100),
                 ),
-                itemBuilder: (context, index) => MealCard(
-                  meal: meals[index],
-                  onAdd: () => _addToCart(context, meals[index]),
+                itemBuilder: (context, index) => GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () => _openDetails(context, meals[index]),
+                  child: MealCard(
+                    meal: meals[index],
+                    onAdd: () => _addToCart(context, meals[index]),
+                  ),
                 ),
               ),
             ),

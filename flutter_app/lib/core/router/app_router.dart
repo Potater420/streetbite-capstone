@@ -4,6 +4,8 @@ import 'package:streetbite/presentation/screens/home/home_screen.dart';
 import 'package:streetbite/presentation/screens/login/login_screen.dart';
 import 'package:streetbite/presentation/screens/signup/signup_screen.dart';
 import 'package:streetbite/presentation/screens/splash/splash_screen.dart';
+import 'package:streetbite/domain/entities/meal.dart';
+import 'package:streetbite/presentation/screens/meal_details/meal_details_screen.dart';
 
 class AppRouter {
   AppRouter._();
@@ -17,6 +19,9 @@ class AppRouter {
         screen = const SignUpScreen();
       case AppRoutes.home:
         screen = const HomeScreen();
+      case AppRoutes.mealDetails:
+        // The selected meal arrives as a navigation argument.
+        screen = MealDetailsScreen(meal: settings.arguments as Meal);
       case AppRoutes.splash:
       default:
         screen = const SplashScreen();

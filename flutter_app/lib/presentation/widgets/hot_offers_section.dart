@@ -6,9 +6,14 @@ import 'package:streetbite/presentation/widgets/section_title.dart';
 
 /// Horizontal "Hot Offers" list (five items).
 class HotOffersSection extends StatelessWidget {
-  const HotOffersSection({super.key, required this.meals});
+  const HotOffersSection({
+    super.key,
+    required this.meals,
+    required this.onMealTap,
+  });
 
   final List<Meal> meals;
+  final ValueChanged<Meal> onMealTap;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +30,10 @@ class HotOffersSection extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             itemCount: meals.length,
             separatorBuilder: (_, _) => const SizedBox(width: 12),
-            itemBuilder: (context, index) => HotOfferCard(meal: meals[index]),
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () => onMealTap(meals[index]),
+              child: HotOfferCard(meal: meals[index]),
+            ),
           ),
         ),
       ],

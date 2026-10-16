@@ -149,4 +149,23 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get toggleTheme => 'تبديل المظهر';
+
+  @override
+  String get instructionsTitle => 'طريقة التحضير';
+
+  @override
+  String addToCartWithPrice(String price) {
+    return 'أضف إلى السلة • $price';
+  }
+
+  @override
+  String addAnotherWithCount(int count) {
+    return 'أضف المزيد • $count في السلة';
+  }
+
+  @override
+  String get addToFavorites => 'أضف إلى المفضلة';
+
+  @override
+  String get removeFromFavorites => 'إزالة من المفضلة';
 }
