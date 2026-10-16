@@ -5,7 +5,6 @@ import 'package:streetbite/core/router/app_routes.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
 import 'package:streetbite/presentation/blocs/auth/auth_cubit.dart';
 import 'package:streetbite/presentation/blocs/auth/auth_state.dart';
-import 'package:streetbite/presentation/widgets/app_logo_icon.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
     vsync: this,
-    duration: const Duration(milliseconds: 1200),
+    duration: const Duration(milliseconds: 1000),
   );
   late final Animation<double> _fade = CurvedAnimation(
     parent: _controller,
@@ -33,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   Future<void> _run() async {
     await _controller.forward();
-    await Future<void>.delayed(const Duration(milliseconds: 700));
+    await Future<void>.delayed(const Duration(milliseconds: 500));
     if (!mounted) return;
     context.read<AuthCubit>().checkAuth();
   }
@@ -56,15 +55,32 @@ class _SplashScreenState extends State<SplashScreen>
       },
       child: Scaffold(
         backgroundColor: AppColors.primary,
-        body: Center(
-          child: FadeTransition(
-            opacity: _fade,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const AppLogoIcon(),
-                const SizedBox(height: 24),
-                Text(
+        body: Stack(
+          alignment: Alignment.center,
+          children: [
+            // Same size and position as the native splash icon, so there is
+            // no visible jump. The circle crop matches Android 12+.
+            ClipOval(
+              child: SizedBox(
+                width: 192,
+                height: 192,
+                child: OverflowBox(
+                  maxWidth: 288,
+                  maxHeight: 288,
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    width: 288,
+                    height: 288,
+                  ),
+                ),
+              ),
+            ),
+            // Only the app name fades in.
+            Align(
+              alignment: const Alignment(0, 0.45),
+              child: FadeTransition(
+                opacity: _fade,
+                child: Text(
                   context.l10n.appName,
                   style: const TextStyle(
                     color: Colors.white,
@@ -72,9 +88,9 @@ class _SplashScreenState extends State<SplashScreen>
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
