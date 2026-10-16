@@ -73,5 +73,19 @@
     }
   },
   "addToFavorites": "Add to favourites",
-  "removeFromFavorites": "Remove from favourites"
+  "removeFromFavorites": "Remove from favourites",
+    "cartTitle": "Order",
+  "deliveryLabel": "Delivery",
+  "pickupLabel": "Pickup",
+  "seeMenu": "See menu",
+  "summaryOrder": "Order",
+  "summaryDeliveryFee": "Delivery fee",
+  "summaryTaxes": "Fees & taxes",
+  "summaryTotal": "Total",
+  "continueButton": "Continue",
+  "cartEmpty": "Your cart is empty",
+  "browseMeals": "Browse meals",
+  "removeFromCart": "Remove",
+  "decreaseQuantity": "Decrease quantity",
+  "increaseQuantity": "Increase quantity"
 }

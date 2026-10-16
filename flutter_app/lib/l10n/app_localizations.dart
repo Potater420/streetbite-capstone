@@ -391,6 +391,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Remove from favourites'**
   String get removeFromFavorites;
+
+  /// No description provided for @cartTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Order'**
+  String get cartTitle;
+
+  /// No description provided for @deliveryLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery'**
+  String get deliveryLabel;
+
+  /// No description provided for @pickupLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Pickup'**
+  String get pickupLabel;
+
+  /// No description provided for @seeMenu.
+  ///
+  /// In en, this message translates to:
+  /// **'See menu'**
+  String get seeMenu;
+
+  /// No description provided for @summaryOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Order'**
+  String get summaryOrder;
+
+  /// No description provided for @summaryDeliveryFee.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery fee'**
+  String get summaryDeliveryFee;
+
+  /// No description provided for @summaryTaxes.
+  ///
+  /// In en, this message translates to:
+  /// **'Fees & taxes'**
+  String get summaryTaxes;
+
+  /// No description provided for @summaryTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Total'**
+  String get summaryTotal;
+
+  /// No description provided for @continueButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueButton;
+
+  /// No description provided for @cartEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Your cart is empty'**
+  String get cartEmpty;
+
+  /// No description provided for @browseMeals.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse meals'**
+  String get browseMeals;
+
+  /// No description provided for @removeFromCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get removeFromCart;
+
+  /// No description provided for @decreaseQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Decrease quantity'**
+  String get decreaseQuantity;
+
+  /// No description provided for @increaseQuantity.
+  ///
+  /// In en, this message translates to:
+  /// **'Increase quantity'**
+  String get increaseQuantity;
 }
 
 class _AppLocalizationsDelegate

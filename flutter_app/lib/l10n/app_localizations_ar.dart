@@ -168,4 +168,46 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get removeFromFavorites => 'إزالة من المفضلة';
+
+  @override
+  String get cartTitle => 'الطلب';
+
+  @override
+  String get deliveryLabel => 'توصيل';
+
+  @override
+  String get pickupLabel => 'استلام';
+
+  @override
+  String get seeMenu => 'عرض القائمة';
+
+  @override
+  String get summaryOrder => 'الطلب';
+
+  @override
+  String get summaryDeliveryFee => 'رسوم التوصيل';
+
+  @override
+  String get summaryTaxes => 'الرسوم والضرائب';
+
+  @override
+  String get summaryTotal => 'الإجمالي';
+
+  @override
+  String get continueButton => 'متابعة';
+
+  @override
+  String get cartEmpty => 'سلتك فارغة';
+
+  @override
+  String get browseMeals => 'تصفح الوجبات';
+
+  @override
+  String get removeFromCart => 'إزالة';
+
+  @override
+  String get decreaseQuantity => 'تقليل الكمية';
+
+  @override
+  String get increaseQuantity => 'زيادة الكمية';
 }

@@ -170,4 +170,46 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get removeFromFavorites => 'Remove from favourites';
+
+  @override
+  String get cartTitle => 'Order';
+
+  @override
+  String get deliveryLabel => 'Delivery';
+
+  @override
+  String get pickupLabel => 'Pickup';
+
+  @override
+  String get seeMenu => 'See menu';
+
+  @override
+  String get summaryOrder => 'Order';
+
+  @override
+  String get summaryDeliveryFee => 'Delivery fee';
+
+  @override
+  String get summaryTaxes => 'Fees & taxes';
+
+  @override
+  String get summaryTotal => 'Total';
+
+  @override
+  String get continueButton => 'Continue';
+
+  @override
+  String get cartEmpty => 'Your cart is empty';
+
+  @override
+  String get browseMeals => 'Browse meals';
+
+  @override
+  String get removeFromCart => 'Remove';
+
+  @override
+  String get decreaseQuantity => 'Decrease quantity';
+
+  @override
+  String get increaseQuantity => 'Increase quantity';
 }

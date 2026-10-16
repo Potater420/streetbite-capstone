@@ -1,3 +1,4 @@
+import 'package:streetbite/domain/entities/delivery_mode.dart';
 import 'package:streetbite/domain/entities/meal.dart';
 
 sealed class CartEvent {
@@ -8,4 +9,24 @@ class CartItemAdded extends CartEvent {
   const CartItemAdded(this.meal);
   final Meal meal;
 }
-// Phase 5 adds CartItemRemoved and CartCleared.
+
+/// Removes one unit; the item disappears when its quantity reaches zero.
+class CartItemDecremented extends CartEvent {
+  const CartItemDecremented(this.mealId);
+  final String mealId;
+}
+
+/// Removes the item completely.
+class CartItemRemoved extends CartEvent {
+  const CartItemRemoved(this.mealId);
+  final String mealId;
+}
+
+class CartDeliveryModeChanged extends CartEvent {
+  const CartDeliveryModeChanged(this.mode);
+  final DeliveryMode mode;
+}
+
+class CartCleared extends CartEvent {
+  const CartCleared();
+}

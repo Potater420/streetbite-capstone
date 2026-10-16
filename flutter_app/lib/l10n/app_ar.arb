@@ -48,5 +48,19 @@
   "addToCartWithPrice": "أضف إلى السلة • {price}",
   "addAnotherWithCount": "أضف المزيد • {count} في السلة",
   "addToFavorites": "أضف إلى المفضلة",
-  "removeFromFavorites": "إزالة من المفضلة"
+  "removeFromFavorites": "إزالة من المفضلة",
+    "cartTitle": "الطلب",
+  "deliveryLabel": "توصيل",
+  "pickupLabel": "استلام",
+  "seeMenu": "عرض القائمة",
+  "summaryOrder": "الطلب",
+  "summaryDeliveryFee": "رسوم التوصيل",
+  "summaryTaxes": "الرسوم والضرائب",
+  "summaryTotal": "الإجمالي",
+  "continueButton": "متابعة",
+  "cartEmpty": "سلتك فارغة",
+  "browseMeals": "تصفح الوجبات",
+  "removeFromCart": "إزالة",
+  "decreaseQuantity": "تقليل الكمية",
+  "increaseQuantity": "زيادة الكمية"
 }
