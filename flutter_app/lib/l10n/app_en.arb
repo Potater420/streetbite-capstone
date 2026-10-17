@@ -157,5 +157,17 @@
   "deviceOsLabel": "System",
   "biometricReason": "Verify it's you to open your profile",
   "biometricFailed": "Authentication failed. Your profile stays locked.",
-  "biometricUnavailable": "Fingerprint lock isn't set up on this device, so your profile opened without it."
+  "biometricUnavailable": "Fingerprint lock isn't set up on this device, so your profile opened without it.",
+  "nearbyVendorsTitle": "Nearby Vendors",
+  "vendorInfoSnippet": "{cuisine} • ★ {rating}",
+  "@vendorInfoSnippet": {
+    "placeholders": {
+      "cuisine": {
+        "type": "String"
+      },
+      "rating": {
+        "type": "String"
+      }
+    }
+  }
 }

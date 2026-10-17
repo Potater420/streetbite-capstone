@@ -344,4 +344,12 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get biometricUnavailable =>
       'Fingerprint lock isn\'t set up on this device, so your profile opened without it.';
+
+  @override
+  String get nearbyVendorsTitle => 'Nearby Vendors';
+
+  @override
+  String vendorInfoSnippet(String cuisine, String rating) {
+    return '$cuisine • ★ $rating';
+  }
 }

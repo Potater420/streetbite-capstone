@@ -101,5 +101,7 @@
   "deviceOsLabel": "النظام",
   "biometricReason": "تحقق من هويتك لفتح ملفك الشخصي",
   "biometricFailed": "فشلت المصادقة. سيبقى ملفك الشخصي مقفلًا.",
-  "biometricUnavailable": "قفل البصمة غير مفعّل على هذا الجهاز، لذلك فُتح الملف الشخصي بدونه."
+  "biometricUnavailable": "قفل البصمة غير مفعّل على هذا الجهاز، لذلك فُتح الملف الشخصي بدونه.",
+  "nearbyVendorsTitle": "الباعة القريبون",
+  "vendorInfoSnippet": "{cuisine} • ★ {rating}"
 }
