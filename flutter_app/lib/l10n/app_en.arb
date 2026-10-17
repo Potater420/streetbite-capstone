@@ -73,5 +73,48 @@
     }
   },
   "addToFavorites": "Add to favourites",
-  "removeFromFavorites": "Remove from favourites"
+  "removeFromFavorites": "Remove from favourites",
+    "cartTitle": "Order",
+  "deliveryLabel": "Delivery",
+  "pickupLabel": "Pickup",
+  "seeMenu": "See menu",
+  "summaryOrder": "Order",
+  "summaryDeliveryFee": "Delivery fee",
+  "summaryTaxes": "Fees & taxes",
+  "summaryTotal": "Total",
+  "continueButton": "Continue",
+  "cartEmpty": "Your cart is empty",
+  "browseMeals": "Browse meals",
+  "removeFromCart": "Remove",
+  "decreaseQuantity": "Decrease quantity",
+  "increaseQuantity": "Increase quantity",
+    "checkoutTitle": "Checkout",
+  "paymentMethodTitle": "Payment method",
+  "payCash": "Cash",
+  "payCashSubtitle": "Pay when you receive it",
+  "payCard": "Card",
+  "payCardSubtitle": "Pay now",
+  "cardNumberHint": "Card number",
+  "cardNameHint": "Name on card",
+  "cardExpiryHint": "MM/YY",
+  "cardCvvHint": "CVV",
+  "placeOrderWithTotal": "Place order • {total}",
+  "@placeOrderWithTotal": {
+    "placeholders": {
+      "total": { "type": "String" }
+    }
+  },
+  "validationCardNumber": "Enter a 16-digit card number",
+  "validationCardName": "Enter the name on the card",
+  "validationCardExpiry": "Enter a valid future date (MM/YY)",
+  "validationCardCvv": "Enter a 3 or 4 digit code",
+  "errorInvalidCard": "The card details are not valid.",
+  "orderPlacedTitle": "Order placed!",
+  "orderPlacedMessage": "Your order #{number} has been received.",
+  "@orderPlacedMessage": {
+    "placeholders": {
+      "number": { "type": "String" }
+    }
+  },
+  "backToHome": "Back to home"
 }

@@ -6,6 +6,10 @@ import 'package:streetbite/presentation/screens/signup/signup_screen.dart';
 import 'package:streetbite/presentation/screens/splash/splash_screen.dart';
 import 'package:streetbite/domain/entities/meal.dart';
 import 'package:streetbite/presentation/screens/meal_details/meal_details_screen.dart';
+import 'package:streetbite/presentation/screens/cart/cart_screen.dart';
+import 'package:streetbite/domain/entities/food_order.dart';
+import 'package:streetbite/presentation/screens/checkout/checkout_screen.dart';
+import 'package:streetbite/presentation/screens/order_success/order_success_screen.dart';
 
 class AppRouter {
   AppRouter._();
@@ -19,6 +23,12 @@ class AppRouter {
         screen = const SignUpScreen();
       case AppRoutes.home:
         screen = const HomeScreen();
+      case AppRoutes.cart:
+        screen = const CartScreen();
+      case AppRoutes.checkout:
+        screen = const CheckoutScreen();
+      case AppRoutes.orderSuccess:
+        screen = OrderSuccessScreen(order: settings.arguments as FoodOrder);
       case AppRoutes.mealDetails:
         // The selected meal arrives as a navigation argument.
         screen = MealDetailsScreen(meal: settings.arguments as Meal);

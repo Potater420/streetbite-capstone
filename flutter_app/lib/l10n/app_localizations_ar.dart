@@ -168,4 +168,108 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get removeFromFavorites => 'إزالة من المفضلة';
+
+  @override
+  String get cartTitle => 'الطلب';
+
+  @override
+  String get deliveryLabel => 'توصيل';
+
+  @override
+  String get pickupLabel => 'استلام';
+
+  @override
+  String get seeMenu => 'عرض القائمة';
+
+  @override
+  String get summaryOrder => 'الطلب';
+
+  @override
+  String get summaryDeliveryFee => 'رسوم التوصيل';
+
+  @override
+  String get summaryTaxes => 'الرسوم والضرائب';
+
+  @override
+  String get summaryTotal => 'الإجمالي';
+
+  @override
+  String get continueButton => 'متابعة';
+
+  @override
+  String get cartEmpty => 'سلتك فارغة';
+
+  @override
+  String get browseMeals => 'تصفح الوجبات';
+
+  @override
+  String get removeFromCart => 'إزالة';
+
+  @override
+  String get decreaseQuantity => 'تقليل الكمية';
+
+  @override
+  String get increaseQuantity => 'زيادة الكمية';
+
+  @override
+  String get checkoutTitle => 'إتمام الطلب';
+
+  @override
+  String get paymentMethodTitle => 'طريقة الدفع';
+
+  @override
+  String get payCash => 'نقدًا';
+
+  @override
+  String get payCashSubtitle => 'ادفع عند الاستلام';
+
+  @override
+  String get payCard => 'بطاقة';
+
+  @override
+  String get payCardSubtitle => 'ادفع الآن';
+
+  @override
+  String get cardNumberHint => 'رقم البطاقة';
+
+  @override
+  String get cardNameHint => 'الاسم على البطاقة';
+
+  @override
+  String get cardExpiryHint => 'شهر/سنة';
+
+  @override
+  String get cardCvvHint => 'رمز الأمان';
+
+  @override
+  String placeOrderWithTotal(String total) {
+    return 'تأكيد الطلب • $total';
+  }
+
+  @override
+  String get validationCardNumber => 'أدخل رقم بطاقة من 16 رقمًا';
+
+  @override
+  String get validationCardName => 'أدخل الاسم على البطاقة';
+
+  @override
+  String get validationCardExpiry =>
+      'أدخل تاريخًا صالحًا في المستقبل (شهر/سنة)';
+
+  @override
+  String get validationCardCvv => 'أدخل رمزًا من 3 أو 4 أرقام';
+
+  @override
+  String get errorInvalidCard => 'بيانات البطاقة غير صحيحة.';
+
+  @override
+  String get orderPlacedTitle => 'تم تأكيد الطلب!';
+
+  @override
+  String orderPlacedMessage(String number) {
+    return 'تم استلام طلبك رقم #$number.';
+  }
+
+  @override
+  String get backToHome => 'العودة إلى الرئيسية';
 }

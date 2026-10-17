@@ -20,6 +20,8 @@ extension FailureMessage on Failure {
         return l10n.errorInvalidEmail;
       case FailureType.tooManyRequests:
         return l10n.errorTooManyRequests;
+      case FailureType.invalidCard:
+        return l10n.errorInvalidCard;
       case FailureType.unknown:
         return l10n.errorUnknown;
     }

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:streetbite/data/models/meal_model.dart';
 import 'package:streetbite/data/models/user_model.dart';
+import 'package:streetbite/data/models/order_model.dart';
 
 /// SINGLETON PATTERN: one shared Firestore service for the whole app.
 /// The private constructor blocks other instances; everyone uses [instance].
@@ -41,5 +42,21 @@ class FirestoreService {
     return _userDoc(uid).set({
       'favorites': {mealId: FieldValue.delete()},
     }, SetOptions(merge: true));
+  }
+
+    /// Orders live in the user's `orders` subcollection.
+  Future<void> placeOrder(String uid, OrderModel order) {
+    return _userDoc(uid)
+        .collection('orders')
+        .doc(order.id)
+        .set(order.toJson())
+        .timeout(
+          const Duration(seconds: 10),
+          // Offline writes would wait forever, so report a network problem.
+          onTimeout: () => throw FirebaseException(
+            plugin: 'cloud_firestore',
+            code: 'unavailable',
+          ),
+        );
   }
 }

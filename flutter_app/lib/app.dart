@@ -12,6 +12,7 @@ import 'package:streetbite/presentation/blocs/cart/cart_bloc.dart';
 import 'package:streetbite/presentation/blocs/favorites/favorites_cubit.dart';
 import 'package:streetbite/presentation/blocs/locale/locale_cubit.dart';
 import 'package:streetbite/presentation/blocs/theme/theme_bloc.dart';
+import 'package:streetbite/presentation/blocs/cart/cart_event.dart';
 
 class StreetBiteApp extends StatelessWidget {
   const StreetBiteApp({super.key});
@@ -33,6 +34,7 @@ class StreetBiteApp extends StatelessWidget {
             favorites.watch(state.user.uid);
           } else if (state is Unauthenticated) {
             favorites.clear();
+            context.read<CartBloc>().add(const CartCleared());
           }
         },
         child: BlocBuilder<ThemeBloc, ThemeMode>(
