@@ -475,6 +475,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Increase quantity'**
   String get increaseQuantity;
+
+  /// No description provided for @checkoutTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Checkout'**
+  String get checkoutTitle;
+
+  /// No description provided for @paymentMethodTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Payment method'**
+  String get paymentMethodTitle;
+
+  /// No description provided for @payCash.
+  ///
+  /// In en, this message translates to:
+  /// **'Cash'**
+  String get payCash;
+
+  /// No description provided for @payCashSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay when you receive it'**
+  String get payCashSubtitle;
+
+  /// No description provided for @payCard.
+  ///
+  /// In en, this message translates to:
+  /// **'Card'**
+  String get payCard;
+
+  /// No description provided for @payCardSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pay now'**
+  String get payCardSubtitle;
+
+  /// No description provided for @cardNumberHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Card number'**
+  String get cardNumberHint;
+
+  /// No description provided for @cardNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Name on card'**
+  String get cardNameHint;
+
+  /// No description provided for @cardExpiryHint.
+  ///
+  /// In en, this message translates to:
+  /// **'MM/YY'**
+  String get cardExpiryHint;
+
+  /// No description provided for @cardCvvHint.
+  ///
+  /// In en, this message translates to:
+  /// **'CVV'**
+  String get cardCvvHint;
+
+  /// No description provided for @placeOrderWithTotal.
+  ///
+  /// In en, this message translates to:
+  /// **'Place order • {total}'**
+  String placeOrderWithTotal(String total);
+
+  /// No description provided for @validationCardNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a 16-digit card number'**
+  String get validationCardNumber;
+
+  /// No description provided for @validationCardName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the name on the card'**
+  String get validationCardName;
+
+  /// No description provided for @validationCardExpiry.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid future date (MM/YY)'**
+  String get validationCardExpiry;
+
+  /// No description provided for @validationCardCvv.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a 3 or 4 digit code'**
+  String get validationCardCvv;
+
+  /// No description provided for @errorInvalidCard.
+  ///
+  /// In en, this message translates to:
+  /// **'The card details are not valid.'**
+  String get errorInvalidCard;
+
+  /// No description provided for @orderPlacedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Order placed!'**
+  String get orderPlacedTitle;
+
+  /// No description provided for @orderPlacedMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Your order #{number} has been received.'**
+  String orderPlacedMessage(String number);
+
+  /// No description provided for @backToHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to home'**
+  String get backToHome;
 }
 
 class _AppLocalizationsDelegate

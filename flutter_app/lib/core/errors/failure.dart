@@ -10,6 +10,7 @@ enum FailureType {
   invalidEmail,
   tooManyRequests,
   unknown,
+  invalidCard,
 }
 
 class Failure extends Equatable implements Exception {

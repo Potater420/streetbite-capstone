@@ -210,4 +210,66 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get increaseQuantity => 'زيادة الكمية';
+
+  @override
+  String get checkoutTitle => 'إتمام الطلب';
+
+  @override
+  String get paymentMethodTitle => 'طريقة الدفع';
+
+  @override
+  String get payCash => 'نقدًا';
+
+  @override
+  String get payCashSubtitle => 'ادفع عند الاستلام';
+
+  @override
+  String get payCard => 'بطاقة';
+
+  @override
+  String get payCardSubtitle => 'ادفع الآن';
+
+  @override
+  String get cardNumberHint => 'رقم البطاقة';
+
+  @override
+  String get cardNameHint => 'الاسم على البطاقة';
+
+  @override
+  String get cardExpiryHint => 'شهر/سنة';
+
+  @override
+  String get cardCvvHint => 'رمز الأمان';
+
+  @override
+  String placeOrderWithTotal(String total) {
+    return 'تأكيد الطلب • $total';
+  }
+
+  @override
+  String get validationCardNumber => 'أدخل رقم بطاقة من 16 رقمًا';
+
+  @override
+  String get validationCardName => 'أدخل الاسم على البطاقة';
+
+  @override
+  String get validationCardExpiry =>
+      'أدخل تاريخًا صالحًا في المستقبل (شهر/سنة)';
+
+  @override
+  String get validationCardCvv => 'أدخل رمزًا من 3 أو 4 أرقام';
+
+  @override
+  String get errorInvalidCard => 'بيانات البطاقة غير صحيحة.';
+
+  @override
+  String get orderPlacedTitle => 'تم تأكيد الطلب!';
+
+  @override
+  String orderPlacedMessage(String number) {
+    return 'تم استلام طلبك رقم #$number.';
+  }
+
+  @override
+  String get backToHome => 'العودة إلى الرئيسية';
 }

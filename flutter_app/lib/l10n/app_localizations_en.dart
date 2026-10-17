@@ -212,4 +212,65 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get increaseQuantity => 'Increase quantity';
+
+  @override
+  String get checkoutTitle => 'Checkout';
+
+  @override
+  String get paymentMethodTitle => 'Payment method';
+
+  @override
+  String get payCash => 'Cash';
+
+  @override
+  String get payCashSubtitle => 'Pay when you receive it';
+
+  @override
+  String get payCard => 'Card';
+
+  @override
+  String get payCardSubtitle => 'Pay now';
+
+  @override
+  String get cardNumberHint => 'Card number';
+
+  @override
+  String get cardNameHint => 'Name on card';
+
+  @override
+  String get cardExpiryHint => 'MM/YY';
+
+  @override
+  String get cardCvvHint => 'CVV';
+
+  @override
+  String placeOrderWithTotal(String total) {
+    return 'Place order • $total';
+  }
+
+  @override
+  String get validationCardNumber => 'Enter a 16-digit card number';
+
+  @override
+  String get validationCardName => 'Enter the name on the card';
+
+  @override
+  String get validationCardExpiry => 'Enter a valid future date (MM/YY)';
+
+  @override
+  String get validationCardCvv => 'Enter a 3 or 4 digit code';
+
+  @override
+  String get errorInvalidCard => 'The card details are not valid.';
+
+  @override
+  String get orderPlacedTitle => 'Order placed!';
+
+  @override
+  String orderPlacedMessage(String number) {
+    return 'Your order #$number has been received.';
+  }
+
+  @override
+  String get backToHome => 'Back to home';
 }

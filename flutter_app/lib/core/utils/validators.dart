@@ -34,4 +34,31 @@ class Validators {
     if (value == null || value.isEmpty) return l10n.validationConfirmRequired;
     return value == password ? null : l10n.validationPasswordMismatch;
   }
+
+  static String? cardNumber(String? value, AppLocalizations l10n) {
+    final digits = value?.replaceAll(' ', '') ?? '';
+    return RegExp(r'^\d{16}$').hasMatch(digits)
+        ? null
+        : l10n.validationCardNumber;
+  }
+
+  static String? cardName(String? value, AppLocalizations l10n) {
+    return (value?.trim().isEmpty ?? true) ? l10n.validationCardName : null;
+  }
+
+  static String? cardExpiry(String? value, AppLocalizations l10n) {
+    final match = RegExp(r'^(0[1-9]|1[0-2])/(\d{2})$').firstMatch(value ?? '');
+    if (match == null) return l10n.validationCardExpiry;
+    final month = int.parse(match.group(1)!);
+    final year = 2000 + int.parse(match.group(2)!);
+    final now = DateTime.now();
+    final isPast = year < now.year || (year == now.year && month < now.month);
+    return isPast ? l10n.validationCardExpiry : null;
+  }
+
+  static String? cardCvv(String? value, AppLocalizations l10n) {
+    return RegExp(r'^\d{3,4}$').hasMatch(value ?? '')
+        ? null
+        : l10n.validationCardCvv;
+  }
 }
