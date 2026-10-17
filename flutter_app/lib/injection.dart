@@ -28,6 +28,10 @@ import 'package:streetbite/domain/usecases/add_favorite_usecase.dart';
 import 'package:streetbite/domain/usecases/remove_favorite_usecase.dart';
 import 'package:streetbite/domain/usecases/watch_favorites_usecase.dart';
 import 'package:streetbite/presentation/blocs/favorites/favorites_cubit.dart';
+import 'package:streetbite/data/repositories/orders_repository_impl.dart';
+import 'package:streetbite/domain/repositories/orders_repository.dart';
+import 'package:streetbite/domain/usecases/place_order_usecase.dart';
+import 'package:streetbite/presentation/blocs/checkout/checkout_cubit.dart';
 
 /// Service locator (GetIt) used for dependency injection.
 /// Classes get their dependencies from here instead of creating them,
@@ -62,7 +66,9 @@ Future<void> configureDependencies() async {
   sl.registerLazySingleton(() => MealRemoteDataSource(sl()));
   sl.registerLazySingleton(() => MealLocalDataSource(sl()));
   sl.registerLazySingleton(() => MealDataSourceFactory(sl(), sl()));
-  sl.registerLazySingleton<MealRepository>(() => MealRepositoryImpl(sl(), sl()));
+  sl.registerLazySingleton<MealRepository>(
+    () => MealRepositoryImpl(sl(), sl()),
+  );
   sl.registerLazySingleton(() => GetMealsUseCase(sl()));
 
   // Favourites
@@ -73,6 +79,10 @@ Future<void> configureDependencies() async {
   sl.registerLazySingleton(() => AddFavoriteUseCase(sl()));
   sl.registerLazySingleton(() => RemoveFavoriteUseCase(sl()));
 
+  // Orders
+  sl.registerLazySingleton<OrdersRepository>(() => OrdersRepositoryImpl(sl()));
+  sl.registerLazySingleton(() => PlaceOrderUseCase(sl()));
+
   // State
   sl.registerFactory(() => ThemeBloc());
   sl.registerFactory(() => LocaleCubit());
@@ -80,4 +90,5 @@ Future<void> configureDependencies() async {
   sl.registerFactory(() => MealsCubit(sl()));
   sl.registerFactory(() => CartBloc());
   sl.registerFactory(() => FavoritesCubit(sl(), sl(), sl()));
+  sl.registerFactory(() => CheckoutCubit(sl()));
 }
