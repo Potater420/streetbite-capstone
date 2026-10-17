@@ -38,7 +38,7 @@ class ProfileRow extends StatelessWidget {
                 ),
               ),
             ),
-            if (trailing != null) trailing!,
+            ?trailing,
           ],
         ),
       ),
