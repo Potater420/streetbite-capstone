@@ -643,6 +643,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count, plural, =1{1 item} other{{count} items}}'**
   String orderItemsCount(int count);
+
+  /// No description provided for @changePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'تغيير الصورة'**
+  String get changePhoto;
+
+  /// No description provided for @profileLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'اللغة'**
+  String get profileLanguage;
+
+  /// No description provided for @languageName.
+  ///
+  /// In en, this message translates to:
+  /// **'العربية'**
+  String get languageName;
+
+  /// No description provided for @profileDarkMode.
+  ///
+  /// In en, this message translates to:
+  /// **'الوضع الداكن'**
+  String get profileDarkMode;
+
+  /// No description provided for @recentOrdersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'أحدث الطلبات'**
+  String get recentOrdersTitle;
+
+  /// No description provided for @deviceDetailsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'تفاصيل الجهاز'**
+  String get deviceDetailsTitle;
+
+  /// No description provided for @deviceModelLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'الجهاز'**
+  String get deviceModelLabel;
+
+  /// No description provided for @deviceOsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'النظام'**
+  String get deviceOsLabel;
+
+  /// No description provided for @biometricReason.
+  ///
+  /// In en, this message translates to:
+  /// **'تحقق من هويتك لفتح ملفك الشخصي'**
+  String get biometricReason;
+
+  /// No description provided for @biometricFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'فشلت المصادقة. سيبقى ملفك الشخصي مقفلًا.'**
+  String get biometricFailed;
+
+  /// No description provided for @biometricUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'قفل البصمة غير مفعّل على هذا الجهاز، لذلك فُتح الملف الشخصي بدونه.'**
+  String get biometricUnavailable;
 }
 
 class _AppLocalizationsDelegate

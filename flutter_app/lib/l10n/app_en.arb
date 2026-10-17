@@ -33,15 +33,19 @@
   "homeWelcome": "Welcome, {name}!",
   "@homeWelcome": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "logoutButton": "Log out",
   "changeLanguage": "Change language",
-   "homeGreeting": "Hi, {name}",
+  "homeGreeting": "Hi, {name}",
   "@homeGreeting": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "searchHint": "Search meals",
@@ -54,27 +58,33 @@
   "addedToCart": "{name} added to cart",
   "@addedToCart": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "cartTooltip": "Cart",
   "toggleTheme": "Toggle theme",
-    "instructionsTitle": "Instructions",
+  "instructionsTitle": "Instructions",
   "addToCartWithPrice": "Add to cart • {price}",
   "@addToCartWithPrice": {
     "placeholders": {
-      "price": { "type": "String" }
+      "price": {
+        "type": "String"
+      }
     }
   },
   "addAnotherWithCount": "Add another • {count} in cart",
   "@addAnotherWithCount": {
     "placeholders": {
-      "count": { "type": "int" }
+      "count": {
+        "type": "int"
+      }
     }
   },
   "addToFavorites": "Add to favourites",
   "removeFromFavorites": "Remove from favourites",
-    "cartTitle": "Order",
+  "cartTitle": "Order",
   "deliveryLabel": "Delivery",
   "pickupLabel": "Pickup",
   "seeMenu": "See menu",
@@ -88,7 +98,7 @@
   "removeFromCart": "Remove",
   "decreaseQuantity": "Decrease quantity",
   "increaseQuantity": "Increase quantity",
-    "checkoutTitle": "Checkout",
+  "checkoutTitle": "Checkout",
   "paymentMethodTitle": "Payment method",
   "payCash": "Cash",
   "payCashSubtitle": "Pay when you receive it",
@@ -101,7 +111,9 @@
   "placeOrderWithTotal": "Place order • {total}",
   "@placeOrderWithTotal": {
     "placeholders": {
-      "total": { "type": "String" }
+      "total": {
+        "type": "String"
+      }
     }
   },
   "validationCardNumber": "Enter a 16-digit card number",
@@ -113,11 +125,13 @@
   "orderPlacedMessage": "Your order #{number} has been received.",
   "@orderPlacedMessage": {
     "placeholders": {
-      "number": { "type": "String" }
+      "number": {
+        "type": "String"
+      }
     }
   },
   "backToHome": "Back to home",
-    "navHome": "Home",
+  "navHome": "Home",
   "navFavorites": "Favourites",
   "navOrders": "Orders",
   "navProfile": "Profile",
@@ -128,7 +142,20 @@
   "orderItemsCount": "{count, plural, =1{1 item} other{{count} items}}",
   "@orderItemsCount": {
     "placeholders": {
-      "count": { "type": "int" }
+      "count": {
+        "type": "int"
+      }
     }
-  }
+  },
+  "changePhoto": "تغيير الصورة",
+  "profileLanguage": "اللغة",
+  "languageName": "العربية",
+  "profileDarkMode": "الوضع الداكن",
+  "recentOrdersTitle": "أحدث الطلبات",
+  "deviceDetailsTitle": "تفاصيل الجهاز",
+  "deviceModelLabel": "الجهاز",
+  "deviceOsLabel": "النظام",
+  "biometricReason": "تحقق من هويتك لفتح ملفك الشخصي",
+  "biometricFailed": "فشلت المصادقة. سيبقى ملفك الشخصي مقفلًا.",
+  "biometricUnavailable": "قفل البصمة غير مفعّل على هذا الجهاز، لذلك فُتح الملف الشخصي بدونه."
 }

@@ -311,4 +311,38 @@ class AppLocalizationsAr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get changePhoto => 'تغيير الصورة';
+
+  @override
+  String get profileLanguage => 'اللغة';
+
+  @override
+  String get languageName => 'العربية';
+
+  @override
+  String get profileDarkMode => 'الوضع الداكن';
+
+  @override
+  String get recentOrdersTitle => 'أحدث الطلبات';
+
+  @override
+  String get deviceDetailsTitle => 'تفاصيل الجهاز';
+
+  @override
+  String get deviceModelLabel => 'الجهاز';
+
+  @override
+  String get deviceOsLabel => 'النظام';
+
+  @override
+  String get biometricReason => 'تحقق من هويتك لفتح ملفك الشخصي';
+
+  @override
+  String get biometricFailed => 'فشلت المصادقة. سيبقى ملفك الشخصي مقفلًا.';
+
+  @override
+  String get biometricUnavailable =>
+      'قفل البصمة غير مفعّل على هذا الجهاز، لذلك فُتح الملف الشخصي بدونه.';
 }
