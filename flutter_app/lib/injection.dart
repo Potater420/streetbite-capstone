@@ -44,6 +44,11 @@ import 'package:streetbite/domain/usecases/get_device_details_usecase.dart';
 import 'package:streetbite/domain/usecases/update_profile_photo_usecase.dart';
 import 'package:streetbite/domain/usecases/watch_profile_photo_usecase.dart';
 import 'package:streetbite/presentation/blocs/profile/profile_cubit.dart';
+import 'package:streetbite/data/datasources/vendors_local_datasource.dart';
+import 'package:streetbite/data/repositories/vendor_repository_impl.dart';
+import 'package:streetbite/domain/repositories/vendor_repository.dart';
+import 'package:streetbite/domain/usecases/get_vendors_usecase.dart';
+import 'package:streetbite/presentation/blocs/vendors/vendors_cubit.dart';
 
 /// Service locator (GetIt) used for dependency injection.
 /// Classes get their dependencies from here instead of creating them,
@@ -107,6 +112,11 @@ Future<void> configureDependencies() async {
   sl.registerLazySingleton(() => WatchProfilePhotoUseCase(sl()));
   sl.registerLazySingleton(() => UpdateProfilePhotoUseCase(sl(), sl()));
 
+  // Vendors
+  sl.registerLazySingleton(() => VendorsLocalDataSource());
+  sl.registerLazySingleton<VendorRepository>(() => VendorRepositoryImpl(sl()));
+  sl.registerLazySingleton(() => GetVendorsUseCase(sl()));
+
   // State
   sl.registerFactory(() => ThemeBloc());
   sl.registerFactory(() => LocaleCubit());
@@ -117,4 +127,5 @@ Future<void> configureDependencies() async {
   sl.registerFactory(() => CheckoutCubit(sl()));
   sl.registerFactory(() => OrdersCubit(sl()));
   sl.registerFactory(() => ProfileCubit(sl(), sl(), sl()));
+  sl.registerFactory(() => VendorsCubit(sl()));
 }

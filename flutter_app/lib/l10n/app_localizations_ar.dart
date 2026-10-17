@@ -345,4 +345,12 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get biometricUnavailable =>
       'قفل البصمة غير مفعّل على هذا الجهاز، لذلك فُتح الملف الشخصي بدونه.';
+
+  @override
+  String get nearbyVendorsTitle => 'الباعة القريبون';
+
+  @override
+  String vendorInfoSnippet(String cuisine, String rating) {
+    return '$cuisine • ★ $rating';
+  }
 }

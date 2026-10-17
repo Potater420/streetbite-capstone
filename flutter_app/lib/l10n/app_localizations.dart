@@ -709,6 +709,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Fingerprint lock isn\'t set up on this device, so your profile opened without it.'**
   String get biometricUnavailable;
+
+  /// No description provided for @nearbyVendorsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Nearby Vendors'**
+  String get nearbyVendorsTitle;
+
+  /// No description provided for @vendorInfoSnippet.
+  ///
+  /// In en, this message translates to:
+  /// **'{cuisine} • ★ {rating}'**
+  String vendorInfoSnippet(String cuisine, String rating);
 }
 
 class _AppLocalizationsDelegate
