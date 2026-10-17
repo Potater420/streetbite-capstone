@@ -66,12 +66,17 @@ class _StepButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      tooltip: tooltip,
-      onPressed: onPressed,
-      padding: EdgeInsets.zero,
-      constraints: const BoxConstraints.tightFor(width: 28, height: 28),
-      icon: Icon(icon, size: 20, color: AppColors.grayDark),
+    return Tooltip(
+      message: tooltip,
+      child: InkResponse(
+        onTap: onPressed,
+        radius: 18,
+        child: SizedBox(
+          width: 28,
+          height: 28,
+          child: Icon(icon, size: 20, color: AppColors.grayDark),
+        ),
+      ),
     );
   }
 }
