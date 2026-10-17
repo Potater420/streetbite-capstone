@@ -81,5 +81,14 @@
   "errorInvalidCard": "بيانات البطاقة غير صحيحة.",
   "orderPlacedTitle": "تم تأكيد الطلب!",
   "orderPlacedMessage": "تم استلام طلبك رقم #{number}.",
-  "backToHome": "العودة إلى الرئيسية"
+  "backToHome": "العودة إلى الرئيسية",
+    "navHome": "الرئيسية",
+  "navFavorites": "المفضلة",
+  "navOrders": "الطلبات",
+  "navProfile": "الملف الشخصي",
+  "favoritesTitle": "المفضلة",
+  "favoritesEmpty": "لا توجد مفضلات بعد. اضغط على القلب في أي وجبة لحفظها.",
+  "ordersTitle": "الطلبات",
+  "ordersEmpty": "لم تقم بأي طلب بعد.",
+  "orderItemsCount": "{count, plural, =0{لا عناصر} =1{عنصر واحد} =2{عنصران} few{{count} عناصر} other{{count} عنصرًا}}"
 }

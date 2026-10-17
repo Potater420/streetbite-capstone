@@ -273,4 +273,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get backToHome => 'Back to home';
+
+  @override
+  String get navHome => 'Home';
+
+  @override
+  String get navFavorites => 'Favourites';
+
+  @override
+  String get navOrders => 'Orders';
+
+  @override
+  String get navProfile => 'Profile';
+
+  @override
+  String get favoritesTitle => 'Favourites';
+
+  @override
+  String get favoritesEmpty =>
+      'No favourites yet. Tap the heart on a meal to save it.';
+
+  @override
+  String get ordersTitle => 'Orders';
+
+  @override
+  String get ordersEmpty => 'You haven\'t placed any orders yet.';
+
+  @override
+  String orderItemsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items',
+      one: '1 item',
+    );
+    return '$_temp0';
+  }
 }

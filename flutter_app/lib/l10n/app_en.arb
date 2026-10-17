@@ -116,5 +116,19 @@
       "number": { "type": "String" }
     }
   },
-  "backToHome": "Back to home"
+  "backToHome": "Back to home",
+    "navHome": "Home",
+  "navFavorites": "Favourites",
+  "navOrders": "Orders",
+  "navProfile": "Profile",
+  "favoritesTitle": "Favourites",
+  "favoritesEmpty": "No favourites yet. Tap the heart on a meal to save it.",
+  "ordersTitle": "Orders",
+  "ordersEmpty": "You haven't placed any orders yet.",
+  "orderItemsCount": "{count, plural, =1{1 item} other{{count} items}}",
+  "@orderItemsCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  }
 }

@@ -272,4 +272,43 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get backToHome => 'العودة إلى الرئيسية';
+
+  @override
+  String get navHome => 'الرئيسية';
+
+  @override
+  String get navFavorites => 'المفضلة';
+
+  @override
+  String get navOrders => 'الطلبات';
+
+  @override
+  String get navProfile => 'الملف الشخصي';
+
+  @override
+  String get favoritesTitle => 'المفضلة';
+
+  @override
+  String get favoritesEmpty =>
+      'لا توجد مفضلات بعد. اضغط على القلب في أي وجبة لحفظها.';
+
+  @override
+  String get ordersTitle => 'الطلبات';
+
+  @override
+  String get ordersEmpty => 'لم تقم بأي طلب بعد.';
+
+  @override
+  String orderItemsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count عنصرًا',
+      few: '$count عناصر',
+      two: 'عنصران',
+      one: 'عنصر واحد',
+      zero: 'لا عناصر',
+    );
+    return '$_temp0';
+  }
 }
