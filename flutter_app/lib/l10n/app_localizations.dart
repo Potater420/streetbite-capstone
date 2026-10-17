@@ -278,12 +278,6 @@ abstract class AppLocalizations {
   /// **'Passwords do not match'**
   String get validationPasswordMismatch;
 
-  /// No description provided for @homeWelcome.
-  ///
-  /// In en, this message translates to:
-  /// **'Welcome, {name}!'**
-  String homeWelcome(String name);
-
   /// No description provided for @logoutButton.
   ///
   /// In en, this message translates to:

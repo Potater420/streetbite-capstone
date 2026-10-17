@@ -30,14 +30,6 @@
   "validationPasswordShort": "Password must be at least 6 characters",
   "validationConfirmRequired": "Please confirm your password",
   "validationPasswordMismatch": "Passwords do not match",
-  "homeWelcome": "Welcome, {name}!",
-  "@homeWelcome": {
-    "placeholders": {
-      "name": {
-        "type": "String"
-      }
-    }
-  },
   "logoutButton": "Log out",
   "changeLanguage": "Change language",
   "homeGreeting": "Hi, {name}",

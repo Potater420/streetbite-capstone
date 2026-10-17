@@ -105,11 +105,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get validationPasswordMismatch => 'Passwords do not match';
 
   @override
-  String homeWelcome(String name) {
-    return 'Welcome, $name!';
-  }
-
-  @override
   String get logoutButton => 'Log out';
 
   @override
