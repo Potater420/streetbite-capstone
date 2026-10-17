@@ -589,6 +589,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back to home'**
   String get backToHome;
+
+  /// No description provided for @navHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get navHome;
+
+  /// No description provided for @navFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favourites'**
+  String get navFavorites;
+
+  /// No description provided for @navOrders.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders'**
+  String get navOrders;
+
+  /// No description provided for @navProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get navProfile;
+
+  /// No description provided for @favoritesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Favourites'**
+  String get favoritesTitle;
+
+  /// No description provided for @favoritesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No favourites yet. Tap the heart on a meal to save it.'**
+  String get favoritesEmpty;
+
+  /// No description provided for @ordersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Orders'**
+  String get ordersTitle;
+
+  /// No description provided for @ordersEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'You haven\'t placed any orders yet.'**
+  String get ordersEmpty;
+
+  /// No description provided for @orderItemsCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 item} other{{count} items}}'**
+  String orderItemsCount(int count);
+
+  /// No description provided for @changePhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Change photo'**
+  String get changePhoto;
+
+  /// No description provided for @profileLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get profileLanguage;
+
+  /// No description provided for @languageName.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get languageName;
+
+  /// No description provided for @profileDarkMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark mode'**
+  String get profileDarkMode;
+
+  /// No description provided for @recentOrdersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent orders'**
+  String get recentOrdersTitle;
+
+  /// No description provided for @deviceDetailsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Device details'**
+  String get deviceDetailsTitle;
+
+  /// No description provided for @deviceModelLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Device'**
+  String get deviceModelLabel;
+
+  /// No description provided for @deviceOsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get deviceOsLabel;
+
+  /// No description provided for @biometricReason.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify it\'s you to open your profile'**
+  String get biometricReason;
+
+  /// No description provided for @biometricFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Authentication failed. Your profile stays locked.'**
+  String get biometricFailed;
+
+  /// No description provided for @biometricUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Fingerprint lock isn\'t set up on this device, so your profile opened without it.'**
+  String get biometricUnavailable;
 }
 
 class _AppLocalizationsDelegate

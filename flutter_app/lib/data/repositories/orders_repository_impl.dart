@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:streetbite/core/errors/error_handler.dart';
 import 'package:streetbite/data/datasources/firestore_service.dart';
 import 'package:streetbite/data/models/order_model.dart';
@@ -16,5 +18,16 @@ class OrdersRepositoryImpl implements OrdersRepository {
     } catch (e) {
       throw ErrorHandler.handle(e);
     }
+  }
+
+  @override
+  Stream<List<FoodOrder>> watchOrders(String uid) {
+    return _service.watchOrders(uid).transform(
+          StreamTransformer<List<OrderModel>, List<FoodOrder>>.fromHandlers(
+            handleData: (orders, sink) => sink.add(orders),
+            handleError: (error, stackTrace, sink) =>
+                sink.addError(ErrorHandler.handle(error), stackTrace),
+          ),
+        );
   }
 }

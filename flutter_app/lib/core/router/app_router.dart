@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:streetbite/core/router/app_routes.dart';
-import 'package:streetbite/presentation/screens/home/home_screen.dart';
 import 'package:streetbite/presentation/screens/login/login_screen.dart';
+import 'package:streetbite/presentation/screens/main_shell/main_shell.dart';
 import 'package:streetbite/presentation/screens/signup/signup_screen.dart';
 import 'package:streetbite/presentation/screens/splash/splash_screen.dart';
 import 'package:streetbite/domain/entities/meal.dart';
@@ -22,7 +22,7 @@ class AppRouter {
       case AppRoutes.signup:
         screen = const SignUpScreen();
       case AppRoutes.home:
-        screen = const HomeScreen();
+        screen = const MainShell();
       case AppRoutes.cart:
         screen = const CartScreen();
       case AppRoutes.checkout:

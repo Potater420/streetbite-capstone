@@ -33,15 +33,19 @@
   "homeWelcome": "Welcome, {name}!",
   "@homeWelcome": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "logoutButton": "Log out",
   "changeLanguage": "Change language",
-   "homeGreeting": "Hi, {name}",
+  "homeGreeting": "Hi, {name}",
   "@homeGreeting": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "searchHint": "Search meals",
@@ -54,27 +58,33 @@
   "addedToCart": "{name} added to cart",
   "@addedToCart": {
     "placeholders": {
-      "name": { "type": "String" }
+      "name": {
+        "type": "String"
+      }
     }
   },
   "cartTooltip": "Cart",
   "toggleTheme": "Toggle theme",
-    "instructionsTitle": "Instructions",
+  "instructionsTitle": "Instructions",
   "addToCartWithPrice": "Add to cart • {price}",
   "@addToCartWithPrice": {
     "placeholders": {
-      "price": { "type": "String" }
+      "price": {
+        "type": "String"
+      }
     }
   },
   "addAnotherWithCount": "Add another • {count} in cart",
   "@addAnotherWithCount": {
     "placeholders": {
-      "count": { "type": "int" }
+      "count": {
+        "type": "int"
+      }
     }
   },
   "addToFavorites": "Add to favourites",
   "removeFromFavorites": "Remove from favourites",
-    "cartTitle": "Order",
+  "cartTitle": "Order",
   "deliveryLabel": "Delivery",
   "pickupLabel": "Pickup",
   "seeMenu": "See menu",
@@ -88,7 +98,7 @@
   "removeFromCart": "Remove",
   "decreaseQuantity": "Decrease quantity",
   "increaseQuantity": "Increase quantity",
-    "checkoutTitle": "Checkout",
+  "checkoutTitle": "Checkout",
   "paymentMethodTitle": "Payment method",
   "payCash": "Cash",
   "payCashSubtitle": "Pay when you receive it",
@@ -101,7 +111,9 @@
   "placeOrderWithTotal": "Place order • {total}",
   "@placeOrderWithTotal": {
     "placeholders": {
-      "total": { "type": "String" }
+      "total": {
+        "type": "String"
+      }
     }
   },
   "validationCardNumber": "Enter a 16-digit card number",
@@ -113,8 +125,37 @@
   "orderPlacedMessage": "Your order #{number} has been received.",
   "@orderPlacedMessage": {
     "placeholders": {
-      "number": { "type": "String" }
+      "number": {
+        "type": "String"
+      }
     }
   },
-  "backToHome": "Back to home"
+  "backToHome": "Back to home",
+  "navHome": "Home",
+  "navFavorites": "Favourites",
+  "navOrders": "Orders",
+  "navProfile": "Profile",
+  "favoritesTitle": "Favourites",
+  "favoritesEmpty": "No favourites yet. Tap the heart on a meal to save it.",
+  "ordersTitle": "Orders",
+  "ordersEmpty": "You haven't placed any orders yet.",
+  "orderItemsCount": "{count, plural, =1{1 item} other{{count} items}}",
+  "@orderItemsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "changePhoto": "Change photo",
+  "profileLanguage": "Language",
+  "languageName": "English",
+  "profileDarkMode": "Dark mode",
+  "recentOrdersTitle": "Recent orders",
+  "deviceDetailsTitle": "Device details",
+  "deviceModelLabel": "Device",
+  "deviceOsLabel": "System",
+  "biometricReason": "Verify it's you to open your profile",
+  "biometricFailed": "Authentication failed. Your profile stays locked.",
+  "biometricUnavailable": "Fingerprint lock isn't set up on this device, so your profile opened without it."
 }

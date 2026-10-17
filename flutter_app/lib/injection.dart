@@ -32,6 +32,18 @@ import 'package:streetbite/data/repositories/orders_repository_impl.dart';
 import 'package:streetbite/domain/repositories/orders_repository.dart';
 import 'package:streetbite/domain/usecases/place_order_usecase.dart';
 import 'package:streetbite/presentation/blocs/checkout/checkout_cubit.dart';
+import 'package:streetbite/domain/usecases/watch_orders_usecase.dart';
+import 'package:streetbite/presentation/blocs/orders/orders_cubit.dart';
+import 'package:streetbite/data/datasources/device_datasource.dart';
+import 'package:streetbite/data/repositories/device_repository_impl.dart';
+import 'package:streetbite/data/repositories/profile_repository_impl.dart';
+import 'package:streetbite/domain/repositories/device_repository.dart';
+import 'package:streetbite/domain/repositories/profile_repository.dart';
+import 'package:streetbite/domain/usecases/authenticate_with_biometrics_usecase.dart';
+import 'package:streetbite/domain/usecases/get_device_details_usecase.dart';
+import 'package:streetbite/domain/usecases/update_profile_photo_usecase.dart';
+import 'package:streetbite/domain/usecases/watch_profile_photo_usecase.dart';
+import 'package:streetbite/presentation/blocs/profile/profile_cubit.dart';
 
 /// Service locator (GetIt) used for dependency injection.
 /// Classes get their dependencies from here instead of creating them,
@@ -82,6 +94,18 @@ Future<void> configureDependencies() async {
   // Orders
   sl.registerLazySingleton<OrdersRepository>(() => OrdersRepositoryImpl(sl()));
   sl.registerLazySingleton(() => PlaceOrderUseCase(sl()));
+  sl.registerLazySingleton(() => WatchOrdersUseCase(sl()));
+
+  // Profile and device features
+  sl.registerLazySingleton(() => DeviceDataSource());
+  sl.registerLazySingleton<DeviceRepository>(() => DeviceRepositoryImpl(sl()));
+  sl.registerLazySingleton<ProfileRepository>(
+    () => ProfileRepositoryImpl(sl()),
+  );
+  sl.registerLazySingleton(() => AuthenticateWithBiometricsUseCase(sl()));
+  sl.registerLazySingleton(() => GetDeviceDetailsUseCase(sl()));
+  sl.registerLazySingleton(() => WatchProfilePhotoUseCase(sl()));
+  sl.registerLazySingleton(() => UpdateProfilePhotoUseCase(sl(), sl()));
 
   // State
   sl.registerFactory(() => ThemeBloc());
@@ -91,4 +115,6 @@ Future<void> configureDependencies() async {
   sl.registerFactory(() => CartBloc());
   sl.registerFactory(() => FavoritesCubit(sl(), sl(), sl()));
   sl.registerFactory(() => CheckoutCubit(sl()));
+  sl.registerFactory(() => OrdersCubit(sl()));
+  sl.registerFactory(() => ProfileCubit(sl(), sl(), sl()));
 }

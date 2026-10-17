@@ -273,4 +273,75 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get backToHome => 'Back to home';
+
+  @override
+  String get navHome => 'Home';
+
+  @override
+  String get navFavorites => 'Favourites';
+
+  @override
+  String get navOrders => 'Orders';
+
+  @override
+  String get navProfile => 'Profile';
+
+  @override
+  String get favoritesTitle => 'Favourites';
+
+  @override
+  String get favoritesEmpty =>
+      'No favourites yet. Tap the heart on a meal to save it.';
+
+  @override
+  String get ordersTitle => 'Orders';
+
+  @override
+  String get ordersEmpty => 'You haven\'t placed any orders yet.';
+
+  @override
+  String orderItemsCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count items',
+      one: '1 item',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get changePhoto => 'Change photo';
+
+  @override
+  String get profileLanguage => 'Language';
+
+  @override
+  String get languageName => 'English';
+
+  @override
+  String get profileDarkMode => 'Dark mode';
+
+  @override
+  String get recentOrdersTitle => 'Recent orders';
+
+  @override
+  String get deviceDetailsTitle => 'Device details';
+
+  @override
+  String get deviceModelLabel => 'Device';
+
+  @override
+  String get deviceOsLabel => 'System';
+
+  @override
+  String get biometricReason => 'Verify it\'s you to open your profile';
+
+  @override
+  String get biometricFailed =>
+      'Authentication failed. Your profile stays locked.';
+
+  @override
+  String get biometricUnavailable =>
+      'Fingerprint lock isn\'t set up on this device, so your profile opened without it.';
 }

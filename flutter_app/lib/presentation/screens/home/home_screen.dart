@@ -79,12 +79,6 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () =>
                     Navigator.of(context).pushNamed(AppRoutes.cart),
               ),
-              // TEMPORARY: logout moves to the Profile screen in Phase 6.
-              IconButton(
-                tooltip: l10n.logoutButton,
-                icon: const Icon(Icons.logout),
-                onPressed: () => context.read<AuthCubit>().logout(),
-              ),
             ],
           ),
           body: BlocBuilder<MealsCubit, MealsState>(
