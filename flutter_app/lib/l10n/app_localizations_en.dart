@@ -311,36 +311,37 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get changePhoto => 'تغيير الصورة';
+  String get changePhoto => 'Change photo';
 
   @override
-  String get profileLanguage => 'اللغة';
+  String get profileLanguage => 'Language';
 
   @override
-  String get languageName => 'العربية';
+  String get languageName => 'English';
 
   @override
-  String get profileDarkMode => 'الوضع الداكن';
+  String get profileDarkMode => 'Dark mode';
 
   @override
-  String get recentOrdersTitle => 'أحدث الطلبات';
+  String get recentOrdersTitle => 'Recent orders';
 
   @override
-  String get deviceDetailsTitle => 'تفاصيل الجهاز';
+  String get deviceDetailsTitle => 'Device details';
 
   @override
-  String get deviceModelLabel => 'الجهاز';
+  String get deviceModelLabel => 'Device';
 
   @override
-  String get deviceOsLabel => 'النظام';
+  String get deviceOsLabel => 'System';
 
   @override
-  String get biometricReason => 'تحقق من هويتك لفتح ملفك الشخصي';
+  String get biometricReason => 'Verify it\'s you to open your profile';
 
   @override
-  String get biometricFailed => 'فشلت المصادقة. سيبقى ملفك الشخصي مقفلًا.';
+  String get biometricFailed =>
+      'Authentication failed. Your profile stays locked.';
 
   @override
   String get biometricUnavailable =>
-      'قفل البصمة غير مفعّل على هذا الجهاز، لذلك فُتح الملف الشخصي بدونه.';
+      'Fingerprint lock isn\'t set up on this device, so your profile opened without it.';
 }

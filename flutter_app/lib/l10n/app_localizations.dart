@@ -647,67 +647,67 @@ abstract class AppLocalizations {
   /// No description provided for @changePhoto.
   ///
   /// In en, this message translates to:
-  /// **'تغيير الصورة'**
+  /// **'Change photo'**
   String get changePhoto;
 
   /// No description provided for @profileLanguage.
   ///
   /// In en, this message translates to:
-  /// **'اللغة'**
+  /// **'Language'**
   String get profileLanguage;
 
   /// No description provided for @languageName.
   ///
   /// In en, this message translates to:
-  /// **'العربية'**
+  /// **'English'**
   String get languageName;
 
   /// No description provided for @profileDarkMode.
   ///
   /// In en, this message translates to:
-  /// **'الوضع الداكن'**
+  /// **'Dark mode'**
   String get profileDarkMode;
 
   /// No description provided for @recentOrdersTitle.
   ///
   /// In en, this message translates to:
-  /// **'أحدث الطلبات'**
+  /// **'Recent orders'**
   String get recentOrdersTitle;
 
   /// No description provided for @deviceDetailsTitle.
   ///
   /// In en, this message translates to:
-  /// **'تفاصيل الجهاز'**
+  /// **'Device details'**
   String get deviceDetailsTitle;
 
   /// No description provided for @deviceModelLabel.
   ///
   /// In en, this message translates to:
-  /// **'الجهاز'**
+  /// **'Device'**
   String get deviceModelLabel;
 
   /// No description provided for @deviceOsLabel.
   ///
   /// In en, this message translates to:
-  /// **'النظام'**
+  /// **'System'**
   String get deviceOsLabel;
 
   /// No description provided for @biometricReason.
   ///
   /// In en, this message translates to:
-  /// **'تحقق من هويتك لفتح ملفك الشخصي'**
+  /// **'Verify it\'s you to open your profile'**
   String get biometricReason;
 
   /// No description provided for @biometricFailed.
   ///
   /// In en, this message translates to:
-  /// **'فشلت المصادقة. سيبقى ملفك الشخصي مقفلًا.'**
+  /// **'Authentication failed. Your profile stays locked.'**
   String get biometricFailed;
 
   /// No description provided for @biometricUnavailable.
   ///
   /// In en, this message translates to:
-  /// **'قفل البصمة غير مفعّل على هذا الجهاز، لذلك فُتح الملف الشخصي بدونه.'**
+  /// **'Fingerprint lock isn\'t set up on this device, so your profile opened without it.'**
   String get biometricUnavailable;
 }
 

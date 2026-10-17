@@ -147,15 +147,15 @@
       }
     }
   },
-  "changePhoto": "تغيير الصورة",
-  "profileLanguage": "اللغة",
-  "languageName": "العربية",
-  "profileDarkMode": "الوضع الداكن",
-  "recentOrdersTitle": "أحدث الطلبات",
-  "deviceDetailsTitle": "تفاصيل الجهاز",
-  "deviceModelLabel": "الجهاز",
-  "deviceOsLabel": "النظام",
-  "biometricReason": "تحقق من هويتك لفتح ملفك الشخصي",
-  "biometricFailed": "فشلت المصادقة. سيبقى ملفك الشخصي مقفلًا.",
-  "biometricUnavailable": "قفل البصمة غير مفعّل على هذا الجهاز، لذلك فُتح الملف الشخصي بدونه."
+  "changePhoto": "Change photo",
+  "profileLanguage": "Language",
+  "languageName": "English",
+  "profileDarkMode": "Dark mode",
+  "recentOrdersTitle": "Recent orders",
+  "deviceDetailsTitle": "Device details",
+  "deviceModelLabel": "Device",
+  "deviceOsLabel": "System",
+  "biometricReason": "Verify it's you to open your profile",
+  "biometricFailed": "Authentication failed. Your profile stays locked.",
+  "biometricUnavailable": "Fingerprint lock isn't set up on this device, so your profile opened without it."
 }
