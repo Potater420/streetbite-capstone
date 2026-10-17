@@ -32,6 +32,8 @@ import 'package:streetbite/data/repositories/orders_repository_impl.dart';
 import 'package:streetbite/domain/repositories/orders_repository.dart';
 import 'package:streetbite/domain/usecases/place_order_usecase.dart';
 import 'package:streetbite/presentation/blocs/checkout/checkout_cubit.dart';
+import 'package:streetbite/domain/usecases/watch_orders_usecase.dart';
+import 'package:streetbite/presentation/blocs/orders/orders_cubit.dart';
 
 /// Service locator (GetIt) used for dependency injection.
 /// Classes get their dependencies from here instead of creating them,
@@ -82,6 +84,7 @@ Future<void> configureDependencies() async {
   // Orders
   sl.registerLazySingleton<OrdersRepository>(() => OrdersRepositoryImpl(sl()));
   sl.registerLazySingleton(() => PlaceOrderUseCase(sl()));
+  sl.registerLazySingleton(() => WatchOrdersUseCase(sl()));
 
   // State
   sl.registerFactory(() => ThemeBloc());
@@ -91,4 +94,5 @@ Future<void> configureDependencies() async {
   sl.registerFactory(() => CartBloc());
   sl.registerFactory(() => FavoritesCubit(sl(), sl(), sl()));
   sl.registerFactory(() => CheckoutCubit(sl()));
+  sl.registerFactory(() => OrdersCubit(sl()));
 }
