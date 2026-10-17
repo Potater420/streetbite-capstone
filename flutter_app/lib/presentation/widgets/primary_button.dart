@@ -27,7 +27,9 @@ class PrimaryButton extends StatelessWidget {
           disabledBackgroundColor: AppColors.primaryLight,
           disabledForegroundColor: AppColors.primary,
           elevation: 0,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(28),
+          ),
         ),
         child: isLoading
             ? const SizedBox(
@@ -37,7 +39,10 @@ class PrimaryButton extends StatelessWidget {
               )
             : Text(
                 label,
-                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
       ),
     );

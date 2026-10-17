@@ -10,7 +10,7 @@ import 'package:streetbite/presentation/blocs/favorites/favorites_state.dart';
 
 class FavoritesCubit extends Cubit<FavoritesState> {
   FavoritesCubit(this._watchFavorites, this._addFavorite, this._removeFavorite)
-      : super(const FavoritesState());
+    : super(const FavoritesState());
 
   final WatchFavoritesUseCase _watchFavorites;
   final AddFavoriteUseCase _addFavorite;

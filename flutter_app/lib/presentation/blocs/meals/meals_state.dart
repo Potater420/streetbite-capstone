@@ -25,11 +25,8 @@ class MealsLoaded extends MealsState {
   List<Meal> get featured => meals.take(4).toList();
   List<Meal> get hotOffers => meals.skip(4).take(5).toList();
 
-  List<String> get categories => meals
-      .map((m) => m.category)
-      .where((c) => c.isNotEmpty)
-      .toSet()
-      .toList();
+  List<String> get categories =>
+      meals.map((m) => m.category).where((c) => c.isNotEmpty).toSet().toList();
 
   List<Meal> get filtered {
     final q = query.trim().toLowerCase();

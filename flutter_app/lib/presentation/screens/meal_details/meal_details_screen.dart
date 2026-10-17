@@ -32,14 +32,17 @@ class MealDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final theme = Theme.of(context);
-    final heroHeight = (MediaQuery.sizeOf(context).height * 0.3).clamp(220.0, 320.0);
+    final heroHeight = (MediaQuery.sizeOf(context).height * 0.3).clamp(
+      220.0,
+      320.0,
+    );
 
     return BlocListener<FavoritesCubit, FavoritesState>(
       listenWhen: (previous, current) => current.failure != null,
       listener: (context, state) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(state.failure!.localized(l10n))),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(state.failure!.localized(l10n))));
       },
       child: Scaffold(
         body: Stack(
@@ -80,22 +83,28 @@ class MealDetailsScreen extends StatelessWidget {
                             children: [
                               Text(
                                 meal.name,
-                                style: theme.textTheme.headlineMedium
-                                    ?.copyWith(fontWeight: FontWeight.w700),
+                                style: theme.textTheme.headlineMedium?.copyWith(
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
                               const SizedBox(height: 4),
-                              _MetaRow(category: meal.category, area: meal.area),
+                              _MetaRow(
+                                category: meal.category,
+                                area: meal.area,
+                              ),
                               const SizedBox(height: 24),
                               Text(
                                 l10n.instructionsTitle,
-                                style: theme.textTheme.titleLarge
-                                    ?.copyWith(fontWeight: FontWeight.w700),
+                                style: theme.textTheme.titleLarge?.copyWith(
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
                               const SizedBox(height: 12),
                               Text(
                                 meal.instructions.trim(),
-                                style: theme.textTheme.bodyLarge
-                                    ?.copyWith(height: 1.6),
+                                style: theme.textTheme.bodyLarge?.copyWith(
+                                  height: 1.6,
+                                ),
                               ),
                             ],
                           ),
@@ -109,12 +118,16 @@ class MealDetailsScreen extends StatelessWidget {
             ),
             SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 8,
+                ),
                 child: Row(
                   children: [
                     IconButton(
                       style: _overlayStyle,
-                      tooltip: MaterialLocalizations.of(context).backButtonTooltip,
+                      tooltip: MaterialLocalizations.of(context)
+                          .backButtonTooltip,
                       icon: const Icon(Icons.arrow_back_ios_new),
                       onPressed: () => Navigator.of(context).pop(),
                     ),
@@ -137,7 +150,7 @@ class MealDetailsScreen extends StatelessWidget {
                       },
                     ),
                     const SizedBox(width: 4),
-                                        CartIconButton(
+                    CartIconButton(
                       style: _overlayStyle,
                       onPressed: () =>
                           Navigator.of(context).pushNamed(AppRoutes.cart),
@@ -161,9 +174,7 @@ class _MetaRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final style = Theme.of(context)
-        .textTheme
-        .bodyMedium
+    final style = Theme.of(context).textTheme.bodyMedium
         ?.copyWith(color: AppColors.grayDark);
 
     return Wrap(
@@ -227,12 +238,16 @@ class _BottomBar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(28),
                   ),
                 ),
-                onPressed: () => context.read<CartBloc>().add(CartItemAdded(meal)),
+                onPressed: () =>
+                    context.read<CartBloc>().add(CartItemAdded(meal)),
                 child: Text(
                   count == 0
                       ? l10n.addToCartWithPrice(price)
                       : l10n.addAnotherWithCount(count),
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               );
             },

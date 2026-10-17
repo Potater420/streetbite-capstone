@@ -32,7 +32,9 @@ class MealsCubit extends Cubit<MealsState> {
   void selectCategory(String? category) {
     final current = state;
     if (current is MealsLoaded) {
-      emit(current.copyWith(category: category, clearCategory: category == null));
+      emit(
+        current.copyWith(category: category, clearCategory: category == null),
+      );
     }
   }
 }

@@ -9,6 +9,5 @@ class SignUpUseCase {
     required String name,
     required String email,
     required String password,
-  }) =>
-      _repository.signUp(name: name, email: email, password: password);
+  }) => _repository.signUp(name: name, email: email, password: password);
 }

@@ -33,9 +33,9 @@ class _LoginScreenState extends State<LoginScreen> {
   void _submit() {
     if (!_formKey.currentState!.validate()) return;
     context.read<AuthCubit>().login(
-          email: _emailController.text,
-          password: _passwordController.text,
-        );
+      email: _emailController.text,
+      password: _passwordController.text,
+    );
   }
 
   @override
@@ -89,8 +89,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 action: l10n.signupButton,
                 // Replacement keeps only one auth screen alive, so the
                 // listeners can't fire twice.
-                onTap: () => Navigator.of(context)
-                    .pushReplacementNamed(AppRoutes.signup),
+                onTap: () =>
+                    Navigator.of(context)
+                        .pushReplacementNamed(AppRoutes.signup),
               ),
             ],
           ),

@@ -16,7 +16,8 @@ class DeviceDataSource {
       final info = await _deviceInfo.androidInfo;
       return DeviceDetails(
         model: '${info.manufacturer} ${info.model}',
-        osVersion: 'Android ${info.version.release} (API ${info.version.sdkInt})',
+        osVersion:
+            'Android ${info.version.release} (API ${info.version.sdkInt})',
       );
     }
     if (defaultTargetPlatform == TargetPlatform.iOS) {

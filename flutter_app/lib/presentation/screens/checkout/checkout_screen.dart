@@ -67,11 +67,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     }
 
     context.read<CheckoutCubit>().placeOrder(
-          uid: auth.user.uid,
-          items: cart.items,
-          deliveryMode: cart.deliveryMode,
-          payment: payment,
-        );
+      uid: auth.user.uid,
+      items: cart.items,
+      deliveryMode: cart.deliveryMode,
+      payment: payment,
+    );
   }
 
   @override
@@ -111,8 +111,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
                     l10n.paymentMethodTitle,
-                    style: theme.textTheme.titleMedium
-                        ?.copyWith(fontWeight: FontWeight.w600),
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 12),

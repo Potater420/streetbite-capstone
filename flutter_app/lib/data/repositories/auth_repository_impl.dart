@@ -14,7 +14,10 @@ class AuthRepositoryImpl implements AuthRepository {
   // Every method turns any exception into a Failure, so nothing unhandled
   // reaches the UI.
   @override
-  Future<AppUser> login({required String email, required String password}) async {
+  Future<AppUser> login({
+    required String email,
+    required String password,
+  }) async {
     try {
       return await _dataSource.login(email: email, password: password);
     } catch (e) {

@@ -45,7 +45,9 @@ class PaymentOptionCard extends StatelessWidget {
                 Icon(icon, color: isSelected ? primary : AppColors.grayDark),
                 const Spacer(),
                 Icon(
-                  isSelected ? Icons.check_circle : Icons.radio_button_unchecked,
+                  isSelected
+                      ? Icons.check_circle
+                      : Icons.radio_button_unchecked,
                   color: isSelected ? primary : AppColors.grayDark,
                 ),
               ],
@@ -53,8 +55,9 @@ class PaymentOptionCard extends StatelessWidget {
             const SizedBox(height: 12),
             Text(
               title,
-              style: theme.textTheme.titleMedium
-                  ?.copyWith(fontWeight: FontWeight.w600),
+              style: theme.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
             ),
             Text(
               subtitle,

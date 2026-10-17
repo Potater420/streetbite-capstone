@@ -21,5 +21,12 @@ class Meal extends Equatable {
   double get price => 6 + ((int.tryParse(id) ?? 0) % 15) + 0.99;
 
   @override
-  List<Object?> get props => [id, name, category, area, instructions, thumbnail];
+  List<Object?> get props => [
+    id,
+    name,
+    category,
+    area,
+    instructions,
+    thumbnail,
+  ];
 }

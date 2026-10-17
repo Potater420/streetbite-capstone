@@ -7,12 +7,8 @@ import 'package:streetbite/domain/usecases/sign_up_usecase.dart';
 import 'package:streetbite/presentation/blocs/auth/auth_state.dart';
 
 class AuthCubit extends Cubit<AuthState> {
-  AuthCubit(
-    this._login,
-    this._signUp,
-    this._logout,
-    this._getCurrentUser,
-  ) : super(const AuthInitial());
+  AuthCubit(this._login, this._signUp, this._logout, this._getCurrentUser)
+    : super(const AuthInitial());
 
   final LoginUseCase _login;
   final SignUpUseCase _signUp;

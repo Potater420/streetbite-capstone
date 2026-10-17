@@ -24,12 +24,12 @@ class FoodOrder extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
-        items,
-        pricing,
-        deliveryMode,
-        paymentMethod,
-        paymentDetail,
-        createdAt,
-      ];
+    id,
+    items,
+    pricing,
+    deliveryMode,
+    paymentMethod,
+    paymentDetail,
+    createdAt,
+  ];
 }

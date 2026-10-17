@@ -65,7 +65,12 @@ class AuthScaffold extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(24, 32, 24, 24 + media.padding.bottom),
+              padding: EdgeInsets.fromLTRB(
+                24,
+                32,
+                24,
+                24 + media.padding.bottom,
+              ),
               child: Column(
                 children: [
                   Text(

@@ -48,15 +48,16 @@ class _ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final theme = Theme.of(context);
-    final grayStyle =
-        theme.textTheme.bodyMedium?.copyWith(color: AppColors.grayDark);
+    final grayStyle = theme.textTheme.bodyMedium?.copyWith(
+      color: AppColors.grayDark,
+    );
 
     return BlocListener<ProfileCubit, ProfileState>(
       listenWhen: (previous, current) => current.failure != null,
       listener: (context, state) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(state.failure!.localized(l10n))),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(state.failure!.localized(l10n))));
       },
       child: Scaffold(
         body: SafeArea(
@@ -81,8 +82,9 @@ class _ProfileView extends StatelessWidget {
                     const SizedBox(height: 12),
                     Text(
                       name,
-                      style: theme.textTheme.headlineLarge
-                          ?.copyWith(fontWeight: FontWeight.w700),
+                      style: theme.textTheme.headlineLarge?.copyWith(
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                     Text(email, style: grayStyle),
                   ],
@@ -130,10 +132,9 @@ class _ProfileView extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final meal = state.meals[index];
                         return GestureDetector(
-                          onTap: () => Navigator.of(context).pushNamed(
-                            AppRoutes.mealDetails,
-                            arguments: meal,
-                          ),
+                          onTap: () => Navigator.of(
+                            context,
+                          ).pushNamed(AppRoutes.mealDetails, arguments: meal),
                           child: HotOfferCard(meal: meal),
                         );
                       },
@@ -179,9 +180,7 @@ class _EmptyText extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(
         message,
-        style: Theme.of(context)
-            .textTheme
-            .bodyMedium
+        style: Theme.of(context).textTheme.bodyMedium
             ?.copyWith(color: AppColors.grayDark),
       ),
     );

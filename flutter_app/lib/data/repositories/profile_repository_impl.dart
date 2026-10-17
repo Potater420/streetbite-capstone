@@ -13,11 +13,15 @@ class ProfileRepositoryImpl implements ProfileRepository {
 
   @override
   Stream<Uint8List?> watchPhoto(String uid) {
-    return _service.watchProfilePhoto(uid).transform(
+    return _service
+        .watchProfilePhoto(uid)
+        .transform(
           StreamTransformer<String?, Uint8List?>.fromHandlers(
             handleData: (base64Photo, sink) {
               try {
-                sink.add(base64Photo == null ? null : base64Decode(base64Photo));
+                sink.add(
+                  base64Photo == null ? null : base64Decode(base64Photo),
+                );
               } catch (e) {
                 sink.addError(ErrorHandler.handle(e));
               }

@@ -52,7 +52,10 @@ class _AuthTextFieldState extends State<AuthTextField> {
         hintStyle: const TextStyle(color: AppColors.grayDark),
         filled: true,
         fillColor: AppColors.primaryLight,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 14,
+        ),
         suffixIcon: widget.isPassword
             ? IconButton(
                 icon: Icon(

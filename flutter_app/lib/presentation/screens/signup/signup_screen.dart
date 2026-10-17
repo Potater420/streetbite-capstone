@@ -37,10 +37,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
   void _submit() {
     if (!_formKey.currentState!.validate()) return;
     context.read<AuthCubit>().signUp(
-          name: _nameController.text,
-          email: _emailController.text,
-          password: _passwordController.text,
-        );
+      name: _nameController.text,
+      email: _emailController.text,
+      password: _passwordController.text,
+    );
   }
 
   @override
@@ -111,8 +111,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               AuthSwitchPrompt(
                 prompt: l10n.haveAccountPrompt,
                 action: l10n.loginButton,
-                onTap: () => Navigator.of(context)
-                    .pushReplacementNamed(AppRoutes.login),
+                onTap: () =>
+                    Navigator.of(context).pushReplacementNamed(AppRoutes.login),
               ),
             ],
           ),

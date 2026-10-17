@@ -19,9 +19,9 @@ class OrdersScreen extends StatelessWidget {
     return BlocListener<OrdersCubit, OrdersState>(
       listenWhen: (previous, current) => current.failure != null,
       listener: (context, state) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(state.failure!.localized(l10n))),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(state.failure!.localized(l10n))));
       },
       child: Scaffold(
         body: SafeArea(

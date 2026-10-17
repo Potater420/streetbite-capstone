@@ -14,7 +14,8 @@ class OrderPricing extends Equatable {
 
   factory OrderPricing.fromItems(List<CartItem> items, DeliveryMode mode) {
     final itemsTotal = items.fold<double>(0, (sum, item) => sum + item.total);
-    final isFree = mode == DeliveryMode.pickup ||
+    final isFree =
+        mode == DeliveryMode.pickup ||
         itemsTotal == 0 ||
         itemsTotal >= AppConstants.freeDeliveryThreshold;
     return OrderPricing(

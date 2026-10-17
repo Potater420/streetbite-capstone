@@ -18,7 +18,7 @@ class MealModel extends Meal {
     instructions: json['strInstructions'] as String? ?? '',
     thumbnail: json['strMealThumb'] as String? ?? '',
   );
-  
+
   factory MealModel.fromEntity(Meal meal) => MealModel(
     id: meal.id,
     name: meal.name,
