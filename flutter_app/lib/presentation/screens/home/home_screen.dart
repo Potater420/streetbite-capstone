@@ -22,6 +22,7 @@ import 'package:streetbite/presentation/widgets/home_search_bar.dart';
 import 'package:streetbite/presentation/widgets/hot_offers_section.dart';
 import 'package:streetbite/presentation/widgets/meal_card.dart';
 import 'package:streetbite/presentation/widgets/section_title.dart';
+import 'package:streetbite/presentation/widgets/nearby_vendors_button.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -146,6 +147,16 @@ class _MealsContent extends StatelessWidget {
                     vertical: 4,
                   ),
                   child: HomeSearchBar(onChanged: cubit.search),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: horizontalPadding,
+                    vertical: 8,
+                  ),
+                  child: NearbyVendorsButton(
+                    onTap: () =>
+                        Navigator.of(context).pushNamed(AppRoutes.vendorMap),
+                  ),
                 ),
                 CategorySelector(
                   categories: state.categories,
