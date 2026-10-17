@@ -16,8 +16,11 @@ class AppTheme {
     final base = ThemeData(useMaterial3: true, colorScheme: scheme);
 
     return base.copyWith(
+      // Poppins for Latin text. Poppins has no Arabic letters, so Cairo is
+      // the fallback and takes over for them.
       textTheme: base.textTheme.apply(
         fontFamily: GoogleFonts.poppins().fontFamily,
+        fontFamilyFallback: [GoogleFonts.cairo().fontFamily!],
       ),
       appBarTheme: AppBarTheme(
         centerTitle: true,
