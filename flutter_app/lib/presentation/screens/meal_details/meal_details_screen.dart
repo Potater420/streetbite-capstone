@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streetbite/core/constants/app_colors.dart';
-import 'package:streetbite/core/errors/failure_message.dart';
 import 'package:streetbite/core/router/app_routes.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
+import 'package:streetbite/core/utils/snackbar_extensions.dart';
 import 'package:streetbite/domain/entities/meal.dart';
 import 'package:streetbite/presentation/blocs/cart/cart_bloc.dart';
 import 'package:streetbite/presentation/blocs/cart/cart_event.dart';
@@ -39,11 +39,7 @@ class MealDetailsScreen extends StatelessWidget {
 
     return BlocListener<FavoritesCubit, FavoritesState>(
       listenWhen: (previous, current) => current.failure != null,
-      listener: (context, state) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text(state.failure!.localized(l10n))));
-      },
+      listener: (context, state) => context.showFailure(state.failure!),
       child: Scaffold(
         body: Stack(
           children: [
@@ -83,9 +79,8 @@ class MealDetailsScreen extends StatelessWidget {
                             children: [
                               Text(
                                 meal.name,
-                                style: theme.textTheme.headlineMedium?.copyWith(
-                                  fontWeight: FontWeight.w700,
-                                ),
+                                style: theme.textTheme.headlineMedium
+                                    ?.copyWith(fontWeight: FontWeight.w700),
                               ),
                               const SizedBox(height: 4),
                               _MetaRow(
@@ -126,8 +121,9 @@ class MealDetailsScreen extends StatelessWidget {
                   children: [
                     IconButton(
                       style: _overlayStyle,
-                      tooltip: MaterialLocalizations.of(context)
-                          .backButtonTooltip,
+                      tooltip: MaterialLocalizations.of(
+                        context,
+                      ).backButtonTooltip,
                       icon: const Icon(Icons.arrow_back_ios_new),
                       onPressed: () => Navigator.of(context).pop(),
                     ),
@@ -174,8 +170,9 @@ class _MetaRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final style = Theme.of(context).textTheme.bodyMedium
-        ?.copyWith(color: AppColors.grayDark);
+    final style = Theme.of(
+      context,
+    ).textTheme.bodyMedium?.copyWith(color: AppColors.grayDark);
 
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
@@ -219,16 +216,10 @@ class _BottomBar extends StatelessWidget {
           child: BlocConsumer<CartBloc, CartState>(
             listenWhen: (previous, current) =>
                 quantityInCart(current) > quantityInCart(previous),
-            listener: (context, state) {
-              ScaffoldMessenger.of(context)
-                ..hideCurrentSnackBar()
-                ..showSnackBar(
-                  SnackBar(
-                    content: Text(l10n.addedToCart(meal.name)),
-                    duration: const Duration(seconds: 2),
-                  ),
-                );
-            },
+            listener: (context, state) => context.showMessage(
+              l10n.addedToCart(meal.name),
+              duration: const Duration(seconds: 2),
+            ),
             builder: (context, state) {
               final count = quantityInCart(state);
               return ElevatedButton(

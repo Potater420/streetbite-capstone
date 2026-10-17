@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:streetbite/core/errors/failure_message.dart';
 import 'package:streetbite/core/router/app_routes.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
+import 'package:streetbite/core/utils/snackbar_extensions.dart';
 import 'package:streetbite/core/utils/validators.dart';
 import 'package:streetbite/presentation/blocs/auth/auth_cubit.dart';
 import 'package:streetbite/presentation/blocs/auth/auth_state.dart';
@@ -50,12 +50,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is Authenticated) {
-          Navigator.of(context)
-              .pushNamedAndRemoveUntil(AppRoutes.home, (_) => false);
+          Navigator.of(
+            context,
+          ).pushNamedAndRemoveUntil(AppRoutes.home, (_) => false);
         } else if (state is AuthError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(state.failure.localized(l10n))),
-          );
+          context.showFailure(state.failure);
         }
       },
       child: AuthScaffold(
@@ -111,8 +110,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
               AuthSwitchPrompt(
                 prompt: l10n.haveAccountPrompt,
                 action: l10n.loginButton,
-                onTap: () =>
-                    Navigator.of(context).pushReplacementNamed(AppRoutes.login),
+                onTap: () => Navigator.of(
+                  context,
+                ).pushReplacementNamed(AppRoutes.login),
               ),
             ],
           ),

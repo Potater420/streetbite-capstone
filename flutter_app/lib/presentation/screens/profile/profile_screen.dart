@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streetbite/core/constants/app_colors.dart';
-import 'package:streetbite/core/errors/failure_message.dart';
 import 'package:streetbite/core/router/app_routes.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
+import 'package:streetbite/core/utils/snackbar_extensions.dart';
 import 'package:streetbite/injection.dart';
 import 'package:streetbite/presentation/blocs/auth/auth_cubit.dart';
 import 'package:streetbite/presentation/blocs/auth/auth_state.dart';
@@ -54,11 +54,7 @@ class _ProfileView extends StatelessWidget {
 
     return BlocListener<ProfileCubit, ProfileState>(
       listenWhen: (previous, current) => current.failure != null,
-      listener: (context, state) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text(state.failure!.localized(l10n))));
-      },
+      listener: (context, state) => context.showFailure(state.failure!),
       child: Scaffold(
         body: SafeArea(
           child: ListView(
@@ -132,9 +128,10 @@ class _ProfileView extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final meal = state.meals[index];
                         return GestureDetector(
-                          onTap: () => Navigator.of(
-                            context,
-                          ).pushNamed(AppRoutes.mealDetails, arguments: meal),
+                          onTap: () => Navigator.of(context).pushNamed(
+                            AppRoutes.mealDetails,
+                            arguments: meal,
+                          ),
                           child: HotOfferCard(meal: meal),
                         );
                       },
@@ -180,8 +177,9 @@ class _EmptyText extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(
         message,
-        style: Theme.of(context).textTheme.bodyMedium
-            ?.copyWith(color: AppColors.grayDark),
+        style: Theme.of(
+          context,
+        ).textTheme.bodyMedium?.copyWith(color: AppColors.grayDark),
       ),
     );
   }

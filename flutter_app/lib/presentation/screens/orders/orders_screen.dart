@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:streetbite/core/errors/failure_message.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
+import 'package:streetbite/core/utils/snackbar_extensions.dart';
 import 'package:streetbite/presentation/blocs/orders/orders_cubit.dart';
 import 'package:streetbite/presentation/blocs/orders/orders_state.dart';
 import 'package:streetbite/presentation/widgets/empty_state.dart';
@@ -18,11 +18,7 @@ class OrdersScreen extends StatelessWidget {
 
     return BlocListener<OrdersCubit, OrdersState>(
       listenWhen: (previous, current) => current.failure != null,
-      listener: (context, state) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text(state.failure!.localized(l10n))));
-      },
+      listener: (context, state) => context.showFailure(state.failure!),
       child: Scaffold(
         body: SafeArea(
           child: Column(
