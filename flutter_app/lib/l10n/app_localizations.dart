@@ -715,6 +715,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{cuisine} • ★ {rating}'**
   String vendorInfoSnippet(String cuisine, String rating);
+
+  /// No description provided for @categoryBeef.
+  ///
+  /// In en, this message translates to:
+  /// **'Beef'**
+  String get categoryBeef;
+
+  /// No description provided for @categoryBreakfast.
+  ///
+  /// In en, this message translates to:
+  /// **'Breakfast'**
+  String get categoryBreakfast;
+
+  /// No description provided for @categoryChicken.
+  ///
+  /// In en, this message translates to:
+  /// **'Chicken'**
+  String get categoryChicken;
+
+  /// No description provided for @categoryDessert.
+  ///
+  /// In en, this message translates to:
+  /// **'Dessert'**
+  String get categoryDessert;
+
+  /// No description provided for @categoryGoat.
+  ///
+  /// In en, this message translates to:
+  /// **'Goat'**
+  String get categoryGoat;
+
+  /// No description provided for @categoryLamb.
+  ///
+  /// In en, this message translates to:
+  /// **'Lamb'**
+  String get categoryLamb;
+
+  /// No description provided for @categoryMiscellaneous.
+  ///
+  /// In en, this message translates to:
+  /// **'Miscellaneous'**
+  String get categoryMiscellaneous;
+
+  /// No description provided for @categoryPasta.
+  ///
+  /// In en, this message translates to:
+  /// **'Pasta'**
+  String get categoryPasta;
+
+  /// No description provided for @categoryPork.
+  ///
+  /// In en, this message translates to:
+  /// **'Pork'**
+  String get categoryPork;
+
+  /// No description provided for @categorySeafood.
+  ///
+  /// In en, this message translates to:
+  /// **'Seafood'**
+  String get categorySeafood;
+
+  /// No description provided for @categorySide.
+  ///
+  /// In en, this message translates to:
+  /// **'Side'**
+  String get categorySide;
+
+  /// No description provided for @categoryStarter.
+  ///
+  /// In en, this message translates to:
+  /// **'Starter'**
+  String get categoryStarter;
+
+  /// No description provided for @categoryVegan.
+  ///
+  /// In en, this message translates to:
+  /// **'Vegan'**
+  String get categoryVegan;
+
+  /// No description provided for @categoryVegetarian.
+  ///
+  /// In en, this message translates to:
+  /// **'Vegetarian'**
+  String get categoryVegetarian;
+
+  /// No description provided for @logoutConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Log out?'**
+  String get logoutConfirmTitle;
+
+  /// No description provided for @logoutConfirmMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to log out of StreetBite?'**
+  String get logoutConfirmMessage;
+
+  /// No description provided for @cancelButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancelButton;
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
 }
 
 class _AppLocalizationsDelegate

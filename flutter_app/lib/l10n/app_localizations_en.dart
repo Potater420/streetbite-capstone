@@ -347,4 +347,59 @@ class AppLocalizationsEn extends AppLocalizations {
   String vendorInfoSnippet(String cuisine, String rating) {
     return '$cuisine • ★ $rating';
   }
+
+  @override
+  String get categoryBeef => 'Beef';
+
+  @override
+  String get categoryBreakfast => 'Breakfast';
+
+  @override
+  String get categoryChicken => 'Chicken';
+
+  @override
+  String get categoryDessert => 'Dessert';
+
+  @override
+  String get categoryGoat => 'Goat';
+
+  @override
+  String get categoryLamb => 'Lamb';
+
+  @override
+  String get categoryMiscellaneous => 'Miscellaneous';
+
+  @override
+  String get categoryPasta => 'Pasta';
+
+  @override
+  String get categoryPork => 'Pork';
+
+  @override
+  String get categorySeafood => 'Seafood';
+
+  @override
+  String get categorySide => 'Side';
+
+  @override
+  String get categoryStarter => 'Starter';
+
+  @override
+  String get categoryVegan => 'Vegan';
+
+  @override
+  String get categoryVegetarian => 'Vegetarian';
+
+  @override
+  String get logoutConfirmTitle => 'Log out?';
+
+  @override
+  String get logoutConfirmMessage =>
+      'Are you sure you want to log out of StreetBite?';
+
+  @override
+  String get cancelButton => 'Cancel';
+
+  @override
+  String get settingsTitle => 'Settings';
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
+import 'package:streetbite/core/utils/category_extensions.dart';
 
 /// Round category icons from the Figma Home screen. `null` means "All".
 class CategorySelector extends StatelessWidget {
@@ -42,7 +43,9 @@ class CategorySelector extends StatelessWidget {
         itemBuilder: (context, index) {
           final category = index == 0 ? null : categories[index - 1];
           return _CategoryTile(
-            label: category ?? context.l10n.categoryAll,
+            label: category == null
+                ? context.l10n.categoryAll
+                : context.categoryName(category),
             icon: category == null
                 ? Icons.apps
                 : _icons[category] ?? Icons.restaurant_menu,
