@@ -41,7 +41,7 @@ class AuthRemoteDataSource {
         .setName(name.trim())
         .setEmail(email.trim())
         .build();
-    await _firestore.saveUser(user);
+    await _firestore.setUserData(user.uid, user.toJson());
     return user;
   }
 

@@ -11,17 +11,19 @@ class ProfileRepositoryImpl implements ProfileRepository {
 
   final FirestoreService _service;
 
+  /// The photo is a small base64 string inside the user's document.
+  static const _field = 'photoBase64';
+
   @override
   Stream<Uint8List?> watchPhoto(String uid) {
     return _service
-        .watchProfilePhoto(uid)
+        .watchUserData(uid)
         .transform(
-          StreamTransformer<String?, Uint8List?>.fromHandlers(
-            handleData: (base64Photo, sink) {
+          StreamTransformer<Map<String, dynamic>?, Uint8List?>.fromHandlers(
+            handleData: (data, sink) {
               try {
-                sink.add(
-                  base64Photo == null ? null : base64Decode(base64Photo),
-                );
+                final base64Photo = data?[_field] as String?;
+                sink.add(base64Photo == null ? null : base64Decode(base64Photo));
               } catch (e) {
                 sink.addError(ErrorHandler.handle(e));
               }
@@ -35,7 +37,9 @@ class ProfileRepositoryImpl implements ProfileRepository {
   @override
   Future<void> savePhoto(String uid, Uint8List bytes) async {
     try {
-      await _service.saveProfilePhoto(uid, base64Encode(bytes));
+      await _service.setUserData(uid, {
+        _field: base64Encode(bytes),
+      }, failWhenOffline: true);
     } catch (e) {
       throw ErrorHandler.handle(e);
     }

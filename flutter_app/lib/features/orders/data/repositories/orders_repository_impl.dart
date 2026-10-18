@@ -11,10 +11,19 @@ class OrdersRepositoryImpl implements OrdersRepository {
 
   final FirestoreService _service;
 
+  /// Orders live in the user's `orders` sub-collection.
+  static const _collection = 'orders';
+
   @override
   Future<void> placeOrder(String uid, FoodOrder order) async {
     try {
-      await _service.placeOrder(uid, OrderModel.fromEntity(order));
+      await _service.setUserDocument(
+        uid,
+        _collection,
+        order.id,
+        OrderModel.fromEntity(order).toJson(),
+        failWhenOffline: true,
+      );
     } catch (e) {
       throw ErrorHandler.handle(e);
     }
@@ -23,10 +32,20 @@ class OrdersRepositoryImpl implements OrdersRepository {
   @override
   Stream<List<FoodOrder>> watchOrders(String uid) {
     return _service
-        .watchOrders(uid)
+        .watchUserCollection(uid, _collection, orderBy: 'createdAt', descending: true)
         .transform(
-          StreamTransformer<List<OrderModel>, List<FoodOrder>>.fromHandlers(
-            handleData: (orders, sink) => sink.add(orders),
+          StreamTransformer<List<FirestoreDocument>, List<FoodOrder>>.fromHandlers(
+            handleData: (documents, sink) {
+              try {
+                sink.add(
+                  documents
+                      .map((doc) => OrderModel.fromJson(doc.id, doc.data))
+                      .toList(),
+                );
+              } catch (e) {
+                sink.addError(ErrorHandler.handle(e));
+              }
+            },
             handleError: (error, stackTrace, sink) =>
                 sink.addError(ErrorHandler.handle(error), stackTrace),
           ),
