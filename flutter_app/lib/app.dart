@@ -6,14 +6,14 @@ import 'package:streetbite/core/theme/app_theme.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
 import 'package:streetbite/injection.dart';
 import 'package:streetbite/l10n/app_localizations.dart';
-import 'package:streetbite/presentation/blocs/auth/auth_cubit.dart';
-import 'package:streetbite/presentation/blocs/auth/auth_state.dart';
-import 'package:streetbite/presentation/blocs/cart/cart_bloc.dart';
-import 'package:streetbite/presentation/blocs/cart/cart_event.dart';
-import 'package:streetbite/presentation/blocs/favorites/favorites_cubit.dart';
-import 'package:streetbite/presentation/blocs/locale/locale_cubit.dart';
-import 'package:streetbite/presentation/blocs/orders/orders_cubit.dart';
-import 'package:streetbite/presentation/blocs/theme/theme_bloc.dart';
+import 'package:streetbite/features/auth/presentation/blocs/auth_cubit.dart';
+import 'package:streetbite/features/auth/presentation/blocs/auth_state.dart';
+import 'package:streetbite/features/cart/presentation/blocs/cart_bloc.dart';
+import 'package:streetbite/features/cart/presentation/blocs/cart_event.dart';
+import 'package:streetbite/features/favorites/presentation/blocs/favorites_cubit.dart';
+import 'package:streetbite/features/settings/presentation/blocs/locale_cubit.dart';
+import 'package:streetbite/features/orders/presentation/blocs/orders_cubit.dart';
+import 'package:streetbite/features/settings/presentation/blocs/theme_bloc.dart';
 
 class StreetBiteApp extends StatelessWidget {
   const StreetBiteApp({super.key});

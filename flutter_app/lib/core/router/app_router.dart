@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:streetbite/core/router/app_routes.dart';
-import 'package:streetbite/presentation/screens/login/login_screen.dart';
-import 'package:streetbite/presentation/screens/main_shell/main_shell.dart';
-import 'package:streetbite/presentation/screens/signup/signup_screen.dart';
-import 'package:streetbite/presentation/screens/splash/splash_screen.dart';
-import 'package:streetbite/domain/entities/meal.dart';
-import 'package:streetbite/presentation/screens/meal_details/meal_details_screen.dart';
-import 'package:streetbite/presentation/screens/cart/cart_screen.dart';
-import 'package:streetbite/domain/entities/food_order.dart';
-import 'package:streetbite/presentation/screens/checkout/checkout_screen.dart';
-import 'package:streetbite/presentation/screens/order_success/order_success_screen.dart';
-import 'package:streetbite/presentation/screens/vendor_map/vendor_map_screen.dart';
+import 'package:streetbite/features/auth/presentation/screens/login_screen.dart';
+import 'package:streetbite/features/main_layout/presentation/screens/main_shell.dart';
+import 'package:streetbite/features/auth/presentation/screens/signup_screen.dart';
+import 'package:streetbite/features/splash/presentation/screens/splash_screen.dart';
+import 'package:streetbite/features/home/domain/entities/meal.dart';
+import 'package:streetbite/features/meal_details/presentation/screens/meal_details_screen.dart';
+import 'package:streetbite/features/cart/presentation/screens/cart_screen.dart';
+import 'package:streetbite/features/orders/domain/entities/food_order.dart';
+import 'package:streetbite/features/orders/presentation/screens/checkout_screen.dart';
+import 'package:streetbite/features/orders/presentation/screens/order_success_screen.dart';
+import 'package:streetbite/features/vendors/presentation/screens/vendor_map_screen.dart';
 
 class AppRouter {
   AppRouter._();
