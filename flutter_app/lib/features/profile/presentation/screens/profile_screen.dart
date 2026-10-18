@@ -22,6 +22,7 @@ import 'package:streetbite/features/orders/presentation/widgets/order_tile.dart'
 import 'package:streetbite/features/profile/presentation/widgets/profile_avatar.dart';
 import 'package:streetbite/features/profile/presentation/widgets/profile_row.dart';
 import 'package:streetbite/core/widgets/section_title.dart';
+import 'package:streetbite/features/profile/presentation/widgets/logout_dialog.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -110,7 +111,12 @@ class _ProfileView extends StatelessWidget {
                 icon: Icons.logout,
                 title: l10n.logoutButton,
                 color: theme.colorScheme.error,
-                onTap: () => context.read<AuthCubit>().logout(),
+                onTap: () async {
+                  final confirmed = await confirmLogout(context);
+                  if (confirmed && context.mounted) {
+                    context.read<AuthCubit>().logout();
+                  }
+                },
               ),
               SectionTitle(l10n.favoritesTitle),
               BlocBuilder<FavoritesCubit, FavoritesState>(
@@ -128,10 +134,9 @@ class _ProfileView extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final meal = state.meals[index];
                         return GestureDetector(
-                          onTap: () => Navigator.of(context).pushNamed(
-                            AppRoutes.mealDetails,
-                            arguments: meal,
-                          ),
+                          onTap: () => Navigator.of(
+                            context,
+                          ).pushNamed(AppRoutes.mealDetails, arguments: meal),
                           child: HotOfferCard(meal: meal),
                         );
                       },
@@ -177,9 +182,8 @@ class _EmptyText extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(
         message,
-        style: Theme.of(
-          context,
-        ).textTheme.bodyMedium?.copyWith(color: AppColors.grayDark),
+        style: Theme.of(context).textTheme.bodyMedium
+            ?.copyWith(color: AppColors.grayDark),
       ),
     );
   }
