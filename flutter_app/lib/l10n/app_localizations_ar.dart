@@ -348,4 +348,56 @@ class AppLocalizationsAr extends AppLocalizations {
   String vendorInfoSnippet(String cuisine, String rating) {
     return '$cuisine • ★ $rating';
   }
+
+  @override
+  String get categoryBeef => 'لحم بقري';
+
+  @override
+  String get categoryBreakfast => 'إفطار';
+
+  @override
+  String get categoryChicken => 'دجاج';
+
+  @override
+  String get categoryDessert => 'حلويات';
+
+  @override
+  String get categoryGoat => 'لحم ماعز';
+
+  @override
+  String get categoryLamb => 'لحم ضأن';
+
+  @override
+  String get categoryMiscellaneous => 'متنوع';
+
+  @override
+  String get categoryPasta => 'معكرونة';
+
+  @override
+  String get categoryPork => 'لحم خنزير';
+
+  @override
+  String get categorySeafood => 'مأكولات بحرية';
+
+  @override
+  String get categorySide => 'أطباق جانبية';
+
+  @override
+  String get categoryStarter => 'مقبلات';
+
+  @override
+  String get categoryVegan => 'فيجان';
+
+  @override
+  String get categoryVegetarian => 'نباتي';
+
+  @override
+  String get logoutConfirmTitle => 'تسجيل الخروج؟';
+
+  @override
+  String get logoutConfirmMessage =>
+      'هل أنت متأكد أنك تريد تسجيل الخروج من ستريت بايت؟';
+
+  @override
+  String get cancelButton => 'إلغاء';
 }

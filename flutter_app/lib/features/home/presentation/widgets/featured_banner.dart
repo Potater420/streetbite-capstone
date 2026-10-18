@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:streetbite/core/constants/app_colors.dart';
+import 'package:streetbite/core/utils/category_extensions.dart';
 import 'package:streetbite/features/home/domain/entities/meal.dart';
 import 'package:streetbite/core/widgets/meal_image.dart';
 
@@ -113,7 +114,7 @@ class _BannerItem extends StatelessWidget {
                 ),
               ),
               Text(
-                meal.category,
+                context.categoryName(meal.category),
                 style: const TextStyle(color: Colors.white70, fontSize: 14),
               ),
             ],

@@ -102,5 +102,22 @@
   "biometricFailed": "فشلت المصادقة. سيبقى ملفك الشخصي مقفلًا.",
   "biometricUnavailable": "قفل البصمة غير مفعّل على هذا الجهاز، لذلك فُتح الملف الشخصي بدونه.",
   "nearbyVendorsTitle": "الباعة القريبون",
-  "vendorInfoSnippet": "{cuisine} • ★ {rating}"
+  "vendorInfoSnippet": "{cuisine} • ★ {rating}",
+    "categoryBeef": "لحم بقري",
+  "categoryBreakfast": "إفطار",
+  "categoryChicken": "دجاج",
+  "categoryDessert": "حلويات",
+  "categoryGoat": "لحم ماعز",
+  "categoryLamb": "لحم ضأن",
+  "categoryMiscellaneous": "متنوع",
+  "categoryPasta": "معكرونة",
+  "categoryPork": "لحم خنزير",
+  "categorySeafood": "مأكولات بحرية",
+  "categorySide": "أطباق جانبية",
+  "categoryStarter": "مقبلات",
+  "categoryVegan": "فيجان",
+  "categoryVegetarian": "نباتي",
+  "logoutConfirmTitle": "تسجيل الخروج؟",
+  "logoutConfirmMessage": "هل أنت متأكد أنك تريد تسجيل الخروج من ستريت بايت؟",
+  "cancelButton": "إلغاء"
 }

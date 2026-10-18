@@ -161,5 +161,22 @@
         "type": "String"
       }
     }
-  }
+  },
+    "categoryBeef": "Beef",
+  "categoryBreakfast": "Breakfast",
+  "categoryChicken": "Chicken",
+  "categoryDessert": "Dessert",
+  "categoryGoat": "Goat",
+  "categoryLamb": "Lamb",
+  "categoryMiscellaneous": "Miscellaneous",
+  "categoryPasta": "Pasta",
+  "categoryPork": "Pork",
+  "categorySeafood": "Seafood",
+  "categorySide": "Side",
+  "categoryStarter": "Starter",
+  "categoryVegan": "Vegan",
+  "categoryVegetarian": "Vegetarian",
+  "logoutConfirmTitle": "Log out?",
+  "logoutConfirmMessage": "Are you sure you want to log out of StreetBite?",
+  "cancelButton": "Cancel"
 }

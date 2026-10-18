@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streetbite/core/constants/app_colors.dart';
 import 'package:streetbite/core/router/app_routes.dart';
+import 'package:streetbite/core/utils/category_extensions.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
 import 'package:streetbite/core/utils/snackbar_extensions.dart';
 import 'package:streetbite/features/home/domain/entities/meal.dart';
@@ -84,7 +85,7 @@ class MealDetailsScreen extends StatelessWidget {
                               ),
                               const SizedBox(height: 4),
                               _MetaRow(
-                                category: meal.category,
+                                category: context.categoryName(meal.category),
                                 area: meal.area,
                               ),
                               const SizedBox(height: 24),

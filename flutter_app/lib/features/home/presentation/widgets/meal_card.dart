@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:streetbite/core/constants/app_colors.dart';
+import 'package:streetbite/core/utils/category_extensions.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
 import 'package:streetbite/features/home/domain/entities/meal.dart';
 import 'package:streetbite/core/widgets/meal_image.dart';
@@ -29,7 +30,7 @@ class MealCard extends StatelessWidget {
           ),
         ),
         Text(
-          meal.category,
+          context.categoryName(meal.category),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: theme.textTheme.bodyMedium?.copyWith(

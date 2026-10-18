@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streetbite/core/router/app_routes.dart';
+import 'package:streetbite/core/utils/category_extensions.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
 import 'package:streetbite/features/favorites/presentation/blocs/favorites_cubit.dart';
 import 'package:streetbite/features/favorites/presentation/blocs/favorites_state.dart';
@@ -38,7 +39,8 @@ class FavoritesScreen extends StatelessWidget {
                       return ListItemTile(
                         imageUrl: meal.thumbnail,
                         title: meal.name,
-                        subtitle: '${meal.category} • ${meal.area}',
+                        subtitle:
+                            '${context.categoryName(meal.category)} • ${meal.area}',
                         onTap: () => Navigator.of(context)
                             .pushNamed(AppRoutes.mealDetails, arguments: meal),
                         trailing: IconButton(
