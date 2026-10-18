@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streetbite/core/constants/app_colors.dart';
-import 'package:streetbite/core/errors/failure_message.dart';
 import 'package:streetbite/core/router/app_routes.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
+import 'package:streetbite/core/utils/snackbar_extensions.dart';
 import 'package:streetbite/domain/entities/meal.dart';
 import 'package:streetbite/presentation/blocs/cart/cart_bloc.dart';
 import 'package:streetbite/presentation/blocs/cart/cart_event.dart';
@@ -32,15 +32,14 @@ class MealDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final theme = Theme.of(context);
-    final heroHeight = (MediaQuery.sizeOf(context).height * 0.3).clamp(220.0, 320.0);
+    final heroHeight = (MediaQuery.sizeOf(context).height * 0.3).clamp(
+      220.0,
+      320.0,
+    );
 
     return BlocListener<FavoritesCubit, FavoritesState>(
       listenWhen: (previous, current) => current.failure != null,
-      listener: (context, state) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(state.failure!.localized(l10n))),
-        );
-      },
+      listener: (context, state) => context.showFailure(state.failure!),
       child: Scaffold(
         body: Stack(
           children: [
@@ -84,18 +83,23 @@ class MealDetailsScreen extends StatelessWidget {
                                     ?.copyWith(fontWeight: FontWeight.w700),
                               ),
                               const SizedBox(height: 4),
-                              _MetaRow(category: meal.category, area: meal.area),
+                              _MetaRow(
+                                category: meal.category,
+                                area: meal.area,
+                              ),
                               const SizedBox(height: 24),
                               Text(
                                 l10n.instructionsTitle,
-                                style: theme.textTheme.titleLarge
-                                    ?.copyWith(fontWeight: FontWeight.w700),
+                                style: theme.textTheme.titleLarge?.copyWith(
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
                               const SizedBox(height: 12),
                               Text(
                                 meal.instructions.trim(),
-                                style: theme.textTheme.bodyLarge
-                                    ?.copyWith(height: 1.6),
+                                style: theme.textTheme.bodyLarge?.copyWith(
+                                  height: 1.6,
+                                ),
                               ),
                             ],
                           ),
@@ -109,12 +113,17 @@ class MealDetailsScreen extends StatelessWidget {
             ),
             SafeArea(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 8,
+                ),
                 child: Row(
                   children: [
                     IconButton(
                       style: _overlayStyle,
-                      tooltip: MaterialLocalizations.of(context).backButtonTooltip,
+                      tooltip: MaterialLocalizations.of(
+                        context,
+                      ).backButtonTooltip,
                       icon: const Icon(Icons.arrow_back_ios_new),
                       onPressed: () => Navigator.of(context).pop(),
                     ),
@@ -137,7 +146,7 @@ class MealDetailsScreen extends StatelessWidget {
                       },
                     ),
                     const SizedBox(width: 4),
-                                        CartIconButton(
+                    CartIconButton(
                       style: _overlayStyle,
                       onPressed: () =>
                           Navigator.of(context).pushNamed(AppRoutes.cart),
@@ -161,10 +170,9 @@ class _MetaRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final style = Theme.of(context)
-        .textTheme
-        .bodyMedium
-        ?.copyWith(color: AppColors.grayDark);
+    final style = Theme.of(
+      context,
+    ).textTheme.bodyMedium?.copyWith(color: AppColors.grayDark);
 
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,
@@ -208,16 +216,10 @@ class _BottomBar extends StatelessWidget {
           child: BlocConsumer<CartBloc, CartState>(
             listenWhen: (previous, current) =>
                 quantityInCart(current) > quantityInCart(previous),
-            listener: (context, state) {
-              ScaffoldMessenger.of(context)
-                ..hideCurrentSnackBar()
-                ..showSnackBar(
-                  SnackBar(
-                    content: Text(l10n.addedToCart(meal.name)),
-                    duration: const Duration(seconds: 2),
-                  ),
-                );
-            },
+            listener: (context, state) => context.showMessage(
+              l10n.addedToCart(meal.name),
+              duration: const Duration(seconds: 2),
+            ),
             builder: (context, state) {
               final count = quantityInCart(state);
               return ElevatedButton(
@@ -227,12 +229,16 @@ class _BottomBar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(28),
                   ),
                 ),
-                onPressed: () => context.read<CartBloc>().add(CartItemAdded(meal)),
+                onPressed: () =>
+                    context.read<CartBloc>().add(CartItemAdded(meal)),
                 child: Text(
                   count == 0
                       ? l10n.addToCartWithPrice(price)
                       : l10n.addAnotherWithCount(count),
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               );
             },

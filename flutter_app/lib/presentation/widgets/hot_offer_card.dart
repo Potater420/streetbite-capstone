@@ -25,15 +25,17 @@ class HotOfferCard extends StatelessWidget {
             meal.name,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.titleMedium
-                ?.copyWith(fontWeight: FontWeight.w600),
+            style: theme.textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.w600,
+            ),
           ),
           Text(
             '${meal.category} • ${meal.area}',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            style: theme.textTheme.bodyMedium
-                ?.copyWith(color: AppColors.grayDark),
+            style: theme.textTheme.bodyMedium?.copyWith(
+              color: AppColors.grayDark,
+            ),
           ),
           Text(
             context.formatPrice(meal.price),

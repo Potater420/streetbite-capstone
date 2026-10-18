@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:streetbite/core/errors/failure_message.dart';
 import 'package:streetbite/core/router/app_routes.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
+import 'package:streetbite/core/utils/snackbar_extensions.dart';
 import 'package:streetbite/domain/payments/card_details.dart';
 import 'package:streetbite/domain/payments/card_payment.dart';
 import 'package:streetbite/domain/payments/cash_payment.dart';
@@ -67,11 +67,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     }
 
     context.read<CheckoutCubit>().placeOrder(
-          uid: auth.user.uid,
-          items: cart.items,
-          deliveryMode: cart.deliveryMode,
-          payment: payment,
-        );
+      uid: auth.user.uid,
+      items: cart.items,
+      deliveryMode: cart.deliveryMode,
+      payment: payment,
+    );
   }
 
   @override
@@ -91,11 +91,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
             );
             context.read<CartBloc>().add(const CartCleared());
           } else if (state is CheckoutFailure) {
-            ScaffoldMessenger.of(context)
-              ..hideCurrentSnackBar()
-              ..showSnackBar(
-                SnackBar(content: Text(state.failure.localized(l10n))),
-              );
+            context.showFailure(state.failure);
           }
         },
         builder: (context, checkoutState) {
@@ -111,8 +107,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Text(
                     l10n.paymentMethodTitle,
-                    style: theme.textTheme.titleMedium
-                        ?.copyWith(fontWeight: FontWeight.w600),
+                    style: theme.textTheme.titleMedium?.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 12),

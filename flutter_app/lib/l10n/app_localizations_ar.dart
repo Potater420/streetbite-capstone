@@ -103,11 +103,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get validationPasswordMismatch => 'كلمتا المرور غير متطابقتين';
 
   @override
-  String homeWelcome(String name) {
-    return 'مرحبًا، $name!';
-  }
-
-  @override
   String get logoutButton => 'تسجيل الخروج';
 
   @override

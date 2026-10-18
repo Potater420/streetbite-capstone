@@ -22,7 +22,9 @@ class OrdersRepositoryImpl implements OrdersRepository {
 
   @override
   Stream<List<FoodOrder>> watchOrders(String uid) {
-    return _service.watchOrders(uid).transform(
+    return _service
+        .watchOrders(uid)
+        .transform(
           StreamTransformer<List<OrderModel>, List<FoodOrder>>.fromHandlers(
             handleData: (orders, sink) => sink.add(orders),
             handleError: (error, stackTrace, sink) =>

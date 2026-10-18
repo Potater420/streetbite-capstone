@@ -12,9 +12,7 @@ class ScreenTitle extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(20, 24, 20, 12),
       child: Text(
         title,
-        style: Theme.of(context)
-            .textTheme
-            .headlineLarge
+        style: Theme.of(context).textTheme.headlineLarge
             ?.copyWith(fontWeight: FontWeight.w700),
       ),
     );

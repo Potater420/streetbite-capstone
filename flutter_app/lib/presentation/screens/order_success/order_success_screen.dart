@@ -37,21 +37,25 @@ class OrderSuccessScreen extends StatelessWidget {
               const SizedBox(height: 24),
               Text(
                 l10n.orderPlacedTitle,
-                style: theme.textTheme.headlineMedium
-                    ?.copyWith(fontWeight: FontWeight.w700),
+                style: theme.textTheme.headlineMedium?.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
               ),
               const SizedBox(height: 12),
               Text(
                 l10n.orderPlacedMessage(number),
                 textAlign: TextAlign.center,
-                style: theme.textTheme.bodyLarge
-                    ?.copyWith(color: AppColors.grayDark),
+                style: theme.textTheme.bodyLarge?.copyWith(
+                  color: AppColors.grayDark,
+                ),
               ),
               const SizedBox(height: 8),
               Text(
                 context.formatPrice(order.pricing.total),
-                style: theme.textTheme.titleLarge
-                    ?.copyWith(color: primary, fontWeight: FontWeight.w700),
+                style: theme.textTheme.titleLarge?.copyWith(
+                  color: primary,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
               const Spacer(),
               ElevatedButton(
@@ -61,8 +65,9 @@ class OrderSuccessScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(28),
                   ),
                 ),
-                onPressed: () => Navigator.of(context)
-                    .popUntil(ModalRoute.withName(AppRoutes.home)),
+                onPressed: () =>
+                    Navigator.of(context)
+                        .popUntil(ModalRoute.withName(AppRoutes.home)),
                 child: Text(
                   l10n.backToHome,
                   style: const TextStyle(

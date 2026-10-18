@@ -17,11 +17,11 @@ class UserModel extends AppUser {
       .build();
 
   Map<String, dynamic> toJson() => {
-        'uid': uid,
-        'name': name,
-        'email': email,
-        'photoUrl': photoUrl,
-      };
+    'uid': uid,
+    'name': name,
+    'email': email,
+    'photoUrl': photoUrl,
+  };
 }
 
 /// BUILDER PATTERN: builds a [UserModel] step by step. Required fields are

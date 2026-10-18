@@ -14,7 +14,9 @@ class FavoritesRepositoryImpl implements FavoritesRepository {
   @override
   Stream<List<Meal>> watchFavorites(String uid) {
     // Stream errors are converted to Failures, like in the other repositories.
-    return _service.watchFavorites(uid).transform(
+    return _service
+        .watchFavorites(uid)
+        .transform(
           StreamTransformer<List<MealModel>, List<Meal>>.fromHandlers(
             handleData: (meals, sink) => sink.add(meals),
             handleError: (error, stackTrace, sink) =>

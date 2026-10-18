@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
+import 'package:streetbite/core/utils/snackbar_extensions.dart';
 import 'package:streetbite/domain/entities/biometric_result.dart';
 import 'package:streetbite/domain/usecases/authenticate_with_biometrics_usecase.dart';
 import 'package:streetbite/injection.dart';
@@ -42,7 +43,6 @@ class _MainShellState extends State<MainShell> {
 
     // Fingerprint required before the profile opens.
     final l10n = context.l10n;
-    final messenger = ScaffoldMessenger.of(context);
     _isAuthenticating = true;
     final result = await _authenticate(l10n.biometricReason);
     _isAuthenticating = false;
@@ -52,14 +52,10 @@ class _MainShellState extends State<MainShell> {
       case BiometricResult.success:
         setState(() => _index = index);
       case BiometricResult.unavailable:
-        messenger
-          ..hideCurrentSnackBar()
-          ..showSnackBar(SnackBar(content: Text(l10n.biometricUnavailable)));
+        context.showMessage(l10n.biometricUnavailable);
         setState(() => _index = index);
       case BiometricResult.failed:
-        messenger
-          ..hideCurrentSnackBar()
-          ..showSnackBar(SnackBar(content: Text(l10n.biometricFailed)));
+        context.showMessage(l10n.biometricFailed);
     }
   }
 

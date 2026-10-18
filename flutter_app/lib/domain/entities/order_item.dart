@@ -13,12 +13,12 @@ class OrderItem extends Equatable {
   });
 
   factory OrderItem.fromCartItem(CartItem item) => OrderItem(
-        mealId: item.meal.id,
-        name: item.meal.name,
-        thumbnail: item.meal.thumbnail,
-        price: item.meal.price,
-        quantity: item.quantity,
-      );
+    mealId: item.meal.id,
+    name: item.meal.name,
+    thumbnail: item.meal.thumbnail,
+    price: item.meal.price,
+    quantity: item.quantity,
+  );
 
   final String mealId;
   final String name;

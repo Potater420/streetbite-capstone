@@ -39,10 +39,8 @@ class FavoritesScreen extends StatelessWidget {
                         imageUrl: meal.thumbnail,
                         title: meal.name,
                         subtitle: '${meal.category} • ${meal.area}',
-                        onTap: () => Navigator.of(context).pushNamed(
-                          AppRoutes.mealDetails,
-                          arguments: meal,
-                        ),
+                        onTap: () => Navigator.of(context)
+                            .pushNamed(AppRoutes.mealDetails, arguments: meal),
                         trailing: IconButton(
                           tooltip: l10n.removeFromFavorites,
                           icon: const Icon(

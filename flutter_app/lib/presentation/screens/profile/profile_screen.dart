@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streetbite/core/constants/app_colors.dart';
-import 'package:streetbite/core/errors/failure_message.dart';
 import 'package:streetbite/core/router/app_routes.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
+import 'package:streetbite/core/utils/snackbar_extensions.dart';
 import 'package:streetbite/injection.dart';
 import 'package:streetbite/presentation/blocs/auth/auth_cubit.dart';
 import 'package:streetbite/presentation/blocs/auth/auth_state.dart';
@@ -48,16 +48,13 @@ class _ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final theme = Theme.of(context);
-    final grayStyle =
-        theme.textTheme.bodyMedium?.copyWith(color: AppColors.grayDark);
+    final grayStyle = theme.textTheme.bodyMedium?.copyWith(
+      color: AppColors.grayDark,
+    );
 
     return BlocListener<ProfileCubit, ProfileState>(
       listenWhen: (previous, current) => current.failure != null,
-      listener: (context, state) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(state.failure!.localized(l10n))),
-        );
-      },
+      listener: (context, state) => context.showFailure(state.failure!),
       child: Scaffold(
         body: SafeArea(
           child: ListView(
@@ -81,8 +78,9 @@ class _ProfileView extends StatelessWidget {
                     const SizedBox(height: 12),
                     Text(
                       name,
-                      style: theme.textTheme.headlineLarge
-                          ?.copyWith(fontWeight: FontWeight.w700),
+                      style: theme.textTheme.headlineLarge?.copyWith(
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                     Text(email, style: grayStyle),
                   ],
@@ -179,10 +177,9 @@ class _EmptyText extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(
         message,
-        style: Theme.of(context)
-            .textTheme
-            .bodyMedium
-            ?.copyWith(color: AppColors.grayDark),
+        style: Theme.of(
+          context,
+        ).textTheme.bodyMedium?.copyWith(color: AppColors.grayDark),
       ),
     );
   }

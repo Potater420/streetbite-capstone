@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streetbite/core/errors/failure_message.dart';
 import 'package:streetbite/core/router/app_routes.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
+import 'package:streetbite/core/utils/snackbar_extensions.dart';
 import 'package:streetbite/domain/entities/meal.dart';
 import 'package:streetbite/injection.dart';
 import 'package:streetbite/presentation/blocs/auth/auth_cubit.dart';
@@ -21,8 +22,8 @@ import 'package:streetbite/presentation/widgets/featured_banner.dart';
 import 'package:streetbite/presentation/widgets/home_search_bar.dart';
 import 'package:streetbite/presentation/widgets/hot_offers_section.dart';
 import 'package:streetbite/presentation/widgets/meal_card.dart';
-import 'package:streetbite/presentation/widgets/section_title.dart';
 import 'package:streetbite/presentation/widgets/nearby_vendors_button.dart';
+import 'package:streetbite/presentation/widgets/section_title.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -36,8 +37,9 @@ class HomeScreen extends StatelessWidget {
       child: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is Unauthenticated) {
-            Navigator.of(context)
-                .pushNamedAndRemoveUntil(AppRoutes.login, (_) => false);
+            Navigator.of(
+              context,
+            ).pushNamedAndRemoveUntil(AppRoutes.login, (_) => false);
           }
         },
         child: Scaffold(
@@ -46,9 +48,7 @@ class HomeScreen extends StatelessWidget {
             titleSpacing: 20,
             title: BlocBuilder<AuthCubit, AuthState>(
               builder: (context, state) => Text(
-                l10n.homeGreeting(
-                  state is Authenticated ? state.user.name : '',
-                ),
+                l10n.homeGreeting(state is Authenticated ? state.user.name : ''),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
@@ -107,14 +107,10 @@ class _MealsContent extends StatelessWidget {
 
   void _addToCart(BuildContext context, Meal meal) {
     context.read<CartBloc>().add(CartItemAdded(meal));
-    ScaffoldMessenger.of(context)
-      ..hideCurrentSnackBar()
-      ..showSnackBar(
-        SnackBar(
-          content: Text(context.l10n.addedToCart(meal.name)),
-          duration: const Duration(seconds: 2),
-        ),
-      );
+    context.showMessage(
+      context.l10n.addedToCart(meal.name),
+      duration: const Duration(seconds: 2),
+    );
   }
 
   void _openDetails(BuildContext context, Meal meal) {

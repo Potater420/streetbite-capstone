@@ -10,7 +10,7 @@ import 'package:streetbite/presentation/blocs/profile/profile_state.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {
   ProfileCubit(this._watchPhoto, this._updatePhoto, this._getDevice)
-      : super(const ProfileState());
+    : super(const ProfileState());
 
   final WatchProfilePhotoUseCase _watchPhoto;
   final UpdateProfilePhotoUseCase _updatePhoto;

@@ -39,14 +39,16 @@ class CartItemTile extends StatelessWidget {
                   item.meal.name,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: theme.textTheme.titleMedium
-                      ?.copyWith(fontWeight: FontWeight.w600),
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 const SizedBox(height: 4),
                 Text(
                   context.formatPrice(item.meal.price),
-                  style: theme.textTheme.bodyMedium
-                      ?.copyWith(color: AppColors.grayDark),
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: AppColors.grayDark,
+                  ),
                 ),
               ],
             ),

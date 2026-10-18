@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:streetbite/core/constants/app_colors.dart';
+import 'package:streetbite/core/router/app_routes.dart';
 import 'package:streetbite/core/utils/context_extensions.dart';
+import 'package:streetbite/core/utils/snackbar_extensions.dart';
 import 'package:streetbite/presentation/blocs/cart/cart_bloc.dart';
 import 'package:streetbite/presentation/blocs/cart/cart_event.dart';
 import 'package:streetbite/presentation/blocs/cart/cart_state.dart';
@@ -10,7 +12,6 @@ import 'package:streetbite/presentation/widgets/cart_item_tile.dart';
 import 'package:streetbite/presentation/widgets/delivery_mode_toggle.dart';
 import 'package:streetbite/presentation/widgets/order_summary.dart';
 import 'package:streetbite/presentation/widgets/section_title.dart';
-import 'package:streetbite/core/router/app_routes.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -27,9 +28,7 @@ class CartScreen extends StatelessWidget {
         // Only while this screen is visible, so clearing the cart after an
         // order is placed doesn't show it.
         if (ModalRoute.of(context)?.isCurrent ?? false) {
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(SnackBar(content: Text(l10n.cartEmpty)));
+          context.showMessage(l10n.cartEmpty);
         }
       },
       child: Scaffold(
@@ -128,10 +127,7 @@ class _EmptyCart extends StatelessWidget {
               color: AppColors.grayDark,
             ),
             const SizedBox(height: 16),
-            Text(
-              l10n.cartEmpty,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
+            Text(l10n.cartEmpty, style: Theme.of(context).textTheme.titleMedium),
             const SizedBox(height: 24),
             SizedBox(
               width: 220,

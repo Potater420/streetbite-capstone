@@ -43,7 +43,10 @@ class FormTextField extends StatelessWidget {
         fillColor: isDark
             ? theme.colorScheme.surfaceContainerHighest
             : AppColors.grayLight,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 14,
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide.none,

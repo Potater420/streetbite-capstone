@@ -1,0 +1,20 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    // Profile, photo and favourites live in the user's own document.
+    match /users/{uid} {
+      allow read, write: if isOwner(uid);
+
+      // Orders can be created and read, but never edited or deleted.
+      match /orders/{orderId} {
+        allow read, create: if isOwner(uid);
+      }
+    }
+  }
+}
