@@ -119,5 +119,6 @@
   "categoryVegetarian": "نباتي",
   "logoutConfirmTitle": "تسجيل الخروج؟",
   "logoutConfirmMessage": "هل أنت متأكد أنك تريد تسجيل الخروج من ستريت بايت؟",
-  "cancelButton": "إلغاء"
+  "cancelButton": "إلغاء",
+    "settingsTitle": "الإعدادات"
 }

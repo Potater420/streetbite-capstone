@@ -178,5 +178,6 @@
   "categoryVegetarian": "Vegetarian",
   "logoutConfirmTitle": "Log out?",
   "logoutConfirmMessage": "Are you sure you want to log out of StreetBite?",
-  "cancelButton": "Cancel"
+  "cancelButton": "Cancel",
+    "settingsTitle": "Settings"
 }
