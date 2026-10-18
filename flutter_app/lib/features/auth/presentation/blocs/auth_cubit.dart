@@ -46,9 +46,11 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> logout() async {
+    // Announce the logout first, so the screens stop their Firestore streams
+    // before the session ends. Otherwise they'd report "permission denied".
+    emit(const Unauthenticated());
     try {
       await _logout();
-      emit(const Unauthenticated());
     } on Failure catch (failure) {
       emit(AuthError(failure));
     }

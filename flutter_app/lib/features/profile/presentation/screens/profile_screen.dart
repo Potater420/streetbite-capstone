@@ -55,7 +55,13 @@ class _ProfileView extends StatelessWidget {
 
     return BlocListener<ProfileCubit, ProfileState>(
       listenWhen: (previous, current) => current.failure != null,
-      listener: (context, state) => context.showFailure(state.failure!),
+      listener: (context, state) {
+        // Right after logout, Firestore can still report errors before this
+        // screen closes. Only show failures while the user is signed in.
+        if (context.read<AuthCubit>().state is Authenticated) {
+          context.showFailure(state.failure!);
+        }
+      },
       child: Scaffold(
         body: SafeArea(
           child: ListView(
