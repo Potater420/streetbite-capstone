@@ -23,7 +23,8 @@ class FavoritesRepositoryImpl implements FavoritesRepository {
           StreamTransformer<Map<String, dynamic>?, List<Meal>>.fromHandlers(
             handleData: (data, sink) {
               try {
-                final favorites = (data?[_field] as Map<String, dynamic>?) ?? {};
+                final favorites =
+                    (data?[_field] as Map<String, dynamic>?) ?? {};
                 final meals = favorites.values
                     .map(
                       (e) => MealModel.fromJson(

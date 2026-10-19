@@ -23,7 +23,9 @@ class ProfileRepositoryImpl implements ProfileRepository {
             handleData: (data, sink) {
               try {
                 final base64Photo = data?[_field] as String?;
-                sink.add(base64Photo == null ? null : base64Decode(base64Photo));
+                sink.add(
+                  base64Photo == null ? null : base64Decode(base64Photo),
+                );
               } catch (e) {
                 sink.addError(ErrorHandler.handle(e));
               }

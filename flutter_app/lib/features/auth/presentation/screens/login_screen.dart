@@ -45,9 +45,8 @@ class _LoginScreenState extends State<LoginScreen> {
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is Authenticated) {
-          Navigator.of(
-            context,
-          ).pushNamedAndRemoveUntil(AppRoutes.home, (_) => false);
+          Navigator.of(context)
+              .pushNamedAndRemoveUntil(AppRoutes.home, (_) => false);
         } else if (state is AuthError) {
           context.showFailure(state.failure);
         }
@@ -88,9 +87,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 action: l10n.signupButton,
                 // Replacement keeps only one auth screen alive, so the
                 // listeners can't fire twice.
-                onTap: () => Navigator.of(
-                  context,
-                ).pushReplacementNamed(AppRoutes.signup),
+                onTap: () =>
+                    Navigator.of(context)
+                        .pushReplacementNamed(AppRoutes.signup),
               ),
             ],
           ),

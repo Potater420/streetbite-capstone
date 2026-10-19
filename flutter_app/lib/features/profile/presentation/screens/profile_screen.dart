@@ -124,10 +124,8 @@ class _ProfileView extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final meal = state.meals[index];
                       return GestureDetector(
-                        onTap: () => Navigator.of(context).pushNamed(
-                          AppRoutes.mealDetails,
-                          arguments: meal,
-                        ),
+                        onTap: () => Navigator.of(context)
+                            .pushNamed(AppRoutes.mealDetails, arguments: meal),
                         child: HotOfferCard(meal: meal),
                       );
                     },
@@ -273,9 +271,8 @@ class _EmptyText extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(
         message,
-        style: Theme.of(
-          context,
-        ).textTheme.bodyMedium?.copyWith(color: AppColors.grayDark),
+        style: Theme.of(context).textTheme.bodyMedium
+            ?.copyWith(color: AppColors.grayDark),
       ),
     );
   }

@@ -26,7 +26,10 @@ void main() {
   group('email', () {
     test('rejects empty and malformed emails', () {
       expect(Validators.email('', l10n), l10n.validationEmailRequired);
-      expect(Validators.email('not-an-email', l10n), l10n.validationEmailInvalid);
+      expect(
+        Validators.email('not-an-email', l10n),
+        l10n.validationEmailInvalid,
+      );
     });
 
     test('accepts a valid email', () {

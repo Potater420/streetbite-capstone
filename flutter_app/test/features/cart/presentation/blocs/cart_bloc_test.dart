@@ -57,7 +57,11 @@ void main() {
   test('removing deletes the item whatever its quantity', () async {
     final expectation = expectLater(
       bloc.stream,
-      emitsInOrder([cartWith(count: 1), cartWith(count: 2), cartWith(count: 0)]),
+      emitsInOrder([
+        cartWith(count: 1),
+        cartWith(count: 2),
+        cartWith(count: 0),
+      ]),
     );
     bloc
       ..add(const CartItemAdded(mealA))
@@ -70,8 +74,11 @@ void main() {
     final expectation = expectLater(
       bloc.stream,
       emitsInOrder([
-        isA<CartState>()
-            .having((s) => s.deliveryMode, 'mode', DeliveryMode.pickup),
+        isA<CartState>().having(
+          (s) => s.deliveryMode,
+          'mode',
+          DeliveryMode.pickup,
+        ),
         cartWith(count: 1),
         isA<CartState>()
             .having((s) => s.items, 'items', isEmpty)

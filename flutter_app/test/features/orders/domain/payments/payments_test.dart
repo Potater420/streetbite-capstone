@@ -39,7 +39,10 @@ void main() {
   });
 
   test('both methods can be used wherever a PaymentMethod is expected', () {
-    final methods = <PaymentMethod>[const CashPayment(), const CardPayment(validCard)];
+    final methods = <PaymentMethod>[
+      const CashPayment(),
+      const CardPayment(validCard),
+    ];
 
     expect(methods.map((m) => m.id), ['cash', 'card']);
   });

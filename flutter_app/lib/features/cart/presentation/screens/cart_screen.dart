@@ -127,7 +127,10 @@ class _EmptyCart extends StatelessWidget {
               color: AppColors.grayDark,
             ),
             const SizedBox(height: 16),
-            Text(l10n.cartEmpty, style: Theme.of(context).textTheme.titleMedium),
+            Text(
+              l10n.cartEmpty,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
             const SizedBox(height: 24),
             SizedBox(
               width: 220,
