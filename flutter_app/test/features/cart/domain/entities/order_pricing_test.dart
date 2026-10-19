@@ -16,10 +16,9 @@ void main() {
   );
 
   test('a small delivery order pays the delivery fee and 7% taxes', () {
-    final pricing = OrderPricing.fromItems(
-      [const CartItem(meal: meal)],
-      DeliveryMode.delivery,
-    );
+    final pricing = OrderPricing.fromItems([
+      const CartItem(meal: meal),
+    ], DeliveryMode.delivery);
 
     expect(pricing.itemsTotal, closeTo(7.99, 0.001));
     expect(pricing.deliveryFee, closeTo(3.99, 0.001));
@@ -37,10 +36,9 @@ void main() {
   });
 
   test('pickup never pays a delivery fee', () {
-    final pricing = OrderPricing.fromItems(
-      [const CartItem(meal: meal)],
-      DeliveryMode.pickup,
-    );
+    final pricing = OrderPricing.fromItems([
+      const CartItem(meal: meal),
+    ], DeliveryMode.pickup);
 
     expect(pricing.deliveryFee, 0);
   });

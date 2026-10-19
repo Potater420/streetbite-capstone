@@ -37,9 +37,8 @@ class HomeScreen extends StatelessWidget {
       child: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is Unauthenticated) {
-            Navigator.of(
-              context,
-            ).pushNamedAndRemoveUntil(AppRoutes.login, (_) => false);
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil(AppRoutes.login, (_) => false);
           }
         },
         child: Scaffold(
@@ -48,7 +47,9 @@ class HomeScreen extends StatelessWidget {
             titleSpacing: 20,
             title: BlocBuilder<AuthCubit, AuthState>(
               builder: (context, state) => Text(
-                l10n.homeGreeting(state is Authenticated ? state.user.name : ''),
+                l10n.homeGreeting(
+                  state is Authenticated ? state.user.name : '',
+                ),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(

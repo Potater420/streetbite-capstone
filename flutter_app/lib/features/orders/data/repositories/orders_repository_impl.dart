@@ -32,9 +32,17 @@ class OrdersRepositoryImpl implements OrdersRepository {
   @override
   Stream<List<FoodOrder>> watchOrders(String uid) {
     return _service
-        .watchUserCollection(uid, _collection, orderBy: 'createdAt', descending: true)
+        .watchUserCollection(
+          uid,
+          _collection,
+          orderBy: 'createdAt',
+          descending: true,
+        )
         .transform(
-          StreamTransformer<List<FirestoreDocument>, List<FoodOrder>>.fromHandlers(
+          StreamTransformer<
+            List<FirestoreDocument>,
+            List<FoodOrder>
+          >.fromHandlers(
             handleData: (documents, sink) {
               try {
                 sink.add(

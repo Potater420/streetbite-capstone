@@ -40,15 +40,17 @@ class _LogoutDialog extends StatelessWidget {
             Text(
               l10n.logoutConfirmTitle,
               textAlign: TextAlign.center,
-              style: theme.textTheme.titleLarge
-                  ?.copyWith(fontWeight: FontWeight.w700),
+              style: theme.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.w700,
+              ),
             ),
             const SizedBox(height: 8),
             Text(
               l10n.logoutConfirmMessage,
               textAlign: TextAlign.center,
-              style: theme.textTheme.bodyMedium
-                  ?.copyWith(color: AppColors.grayDark),
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: AppColors.grayDark,
+              ),
             ),
             const SizedBox(height: 24),
             Row(

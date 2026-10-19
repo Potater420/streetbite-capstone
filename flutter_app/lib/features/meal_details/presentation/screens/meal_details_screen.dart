@@ -80,8 +80,9 @@ class MealDetailsScreen extends StatelessWidget {
                             children: [
                               Text(
                                 meal.name,
-                                style: theme.textTheme.headlineMedium
-                                    ?.copyWith(fontWeight: FontWeight.w700),
+                                style: theme.textTheme.headlineMedium?.copyWith(
+                                  fontWeight: FontWeight.w700,
+                                ),
                               ),
                               const SizedBox(height: 4),
                               _MetaRow(
@@ -122,9 +123,8 @@ class MealDetailsScreen extends StatelessWidget {
                   children: [
                     IconButton(
                       style: _overlayStyle,
-                      tooltip: MaterialLocalizations.of(
-                        context,
-                      ).backButtonTooltip,
+                      tooltip: MaterialLocalizations.of(context)
+                          .backButtonTooltip,
                       icon: const Icon(Icons.arrow_back_ios_new),
                       onPressed: () => Navigator.of(context).pop(),
                     ),
@@ -171,9 +171,8 @@ class _MetaRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final style = Theme.of(
-      context,
-    ).textTheme.bodyMedium?.copyWith(color: AppColors.grayDark);
+    final style = Theme.of(context).textTheme.bodyMedium
+        ?.copyWith(color: AppColors.grayDark);
 
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.center,

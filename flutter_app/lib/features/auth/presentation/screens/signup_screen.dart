@@ -50,9 +50,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is Authenticated) {
-          Navigator.of(
-            context,
-          ).pushNamedAndRemoveUntil(AppRoutes.home, (_) => false);
+          Navigator.of(context)
+              .pushNamedAndRemoveUntil(AppRoutes.home, (_) => false);
         } else if (state is AuthError) {
           context.showFailure(state.failure);
         }
@@ -110,9 +109,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               AuthSwitchPrompt(
                 prompt: l10n.haveAccountPrompt,
                 action: l10n.loginButton,
-                onTap: () => Navigator.of(
-                  context,
-                ).pushReplacementNamed(AppRoutes.login),
+                onTap: () =>
+                    Navigator.of(context).pushReplacementNamed(AppRoutes.login),
               ),
             ],
           ),
